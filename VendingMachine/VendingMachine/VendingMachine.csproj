@@ -40,6 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Money.cs" />
+    <Compile Include="MoneyKind.cs" />
     <Compile Include="投入口.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
