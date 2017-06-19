@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace VendingMachine
 {
-    public class 投入口
+    public static class 投入口
     {
+
+
+
     }
 }

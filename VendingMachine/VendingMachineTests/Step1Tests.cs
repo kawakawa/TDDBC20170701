@@ -4,7 +4,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace VendingMachineTests
 {
     [TestClass]
-    public class UnitTest1
+    public class Step1Tests
     {
         [TestMethod]
         public void TestMethod1()
