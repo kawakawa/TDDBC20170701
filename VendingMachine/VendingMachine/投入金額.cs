@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace VendingMachine
 {
-    class 投入金額
+    public class 投入金額
     {
+        public static int GetTotal()
+        {
+            return 10;
+        }
     }
 }

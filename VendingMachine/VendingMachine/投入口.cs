@@ -9,7 +9,8 @@ namespace VendingMachine
     public static class 投入口
     {
 
-
-
+        public static void 投入(Money yen10)
+        {
+        }
     }
 }
