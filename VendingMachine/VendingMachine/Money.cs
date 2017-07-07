@@ -8,8 +8,8 @@ namespace VendingMachine
 {
     public enum MoneyType
     {
-        Bill,//札
-        Coin//コイン
+        札,
+        コイン
     }
 
 
