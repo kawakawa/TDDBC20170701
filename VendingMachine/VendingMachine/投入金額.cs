@@ -8,7 +8,7 @@ namespace VendingMachine
 {
     public class 投入金額
     {
-        public static int GetTotal()
+        public static int Get合計金額()
         {
             return 10;
         }

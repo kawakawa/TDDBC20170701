@@ -14,7 +14,9 @@ namespace VendingMachineTests
             var yen10 = new Money(10, MoneyType.Coin);
 
             投入口.投入(yen10);
-            投入金額.GetTotal().Is(10);
+            投入金額.Get合計金額().Is(10);
         }
+        
+
     }
 }
