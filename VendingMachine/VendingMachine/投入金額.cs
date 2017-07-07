@@ -10,7 +10,14 @@ namespace VendingMachine
     {
         public static int Get合計金額()
         {
-            return 10;
+            return 投入金額.money.Value;
+        }
+
+
+        private static Money money;
+        public static void Add投入金(Money money)
+        {
+            投入金額.money = money;
         }
     }
 }

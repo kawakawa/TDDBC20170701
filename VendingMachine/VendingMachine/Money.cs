@@ -13,15 +13,22 @@ namespace VendingMachine
     }
 
 
+
+
     public class Money
     {
-        private readonly int _money;
         private readonly MoneyType _moneyType;
+
+
+        public int Value { get; }
 
         public Money(int money,MoneyType moneyType)
         {
-            _money = money;
+            Value = money;
             _moneyType = moneyType;
         }
     }
+
+
+    
 }
