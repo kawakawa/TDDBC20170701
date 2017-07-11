@@ -11,12 +11,12 @@ namespace VendingMachine
         /// <summary>
         /// 投入金額歴
         /// </summary>
-        private readonly List<Money.Money> _insertMoneyHistories;
+        private readonly List<Money.Money> _投入金額歴;
 
 
         private 投入金額()
         {
-            _insertMoneyHistories=new List<Money.Money>();
+            _投入金額歴=new List<Money.Money>();
         }
 
 
@@ -29,19 +29,19 @@ namespace VendingMachine
 
         public int Get合計金額()
         {
-            return _insertMoneyHistories.Sum(n=>n.Value);
+            return _投入金額歴.Sum(n=>n.Value);
         }
 
 
         public void Add投入金(Money.Money money)
         {
-            _insertMoneyHistories.Add(money);
+            _投入金額歴.Add(money);
         }
 
 
         public  void 初期化()
         {
-            _insertMoneyHistories.Clear();
+            _投入金額歴.Clear();
         }
     }
 }
