@@ -4,23 +4,29 @@ using System.Dynamic;
 
 namespace VendingMachine
 {
-    public static class 投入口
+    public class 投入口
     {
+        private static 投入口 _投入口;
+        private static 投入金額 _投入金額;
 
-        private static 投入金額 _投入金額=null;
 
-        public static void Set投入金額(投入金額 投入金額)
+        private 投入口(投入金額 投入金額)
         {
             _投入金額 = 投入金額;
         }
 
+        public static 投入口 投入口Factory(投入金額 投入金額)
+        {
+            return _投入口 ?? (_投入口 = new 投入口(投入金額));
+        }
 
-        public static void 投入(Money.Money money)
+
+        public void 投入(Money.Money 投入金)
         {
             if(_投入金額==null)
                 throw new NullReferenceException(nameof(_投入金額));
 
-            _投入金額.Add投入金(money);
+            _投入金額.Add投入金(投入金);
         }
     }
 }
