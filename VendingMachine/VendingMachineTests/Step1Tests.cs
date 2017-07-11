@@ -106,12 +106,19 @@ namespace VendingMachineTests
         {
             _投入口.投入(MoneyKind.Yen10);
 
-            var _釣銭=new 釣銭();
+            var _釣銭 = _投入金額.払い戻し();
             _釣銭.Get合計金額().Is(10);
         }
 
 
+        [TestMethod]
+        public void _50円玉を投入して払い戻しをすると釣銭50円が戻ってくる()
+        {
+            _投入口.投入(MoneyKind.Yen50);
 
+            var _釣銭 = _投入金額.払い戻し();
+            _釣銭.Get合計金額().Is(50);
+        }
 
     }
 }

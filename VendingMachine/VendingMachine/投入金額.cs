@@ -39,6 +39,14 @@ namespace VendingMachine
         }
 
 
+        public 釣銭 払い戻し()
+        {
+            var 釣銭=new 釣銭(_投入金額歴.ToList());
+            初期化();
+            return 釣銭;
+        }
+
+
         public  void 初期化()
         {
             _投入金額歴.Clear();
