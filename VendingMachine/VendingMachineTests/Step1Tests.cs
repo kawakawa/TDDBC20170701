@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Money;
 using VendingMachine;
@@ -30,11 +31,8 @@ namespace VendingMachineTests
         {
             投入金額.投入金額Clear();
 
-            投入口.投入(MoneyKind.Yen10);
-            投入口.投入(MoneyKind.Yen10);
-            投入口.投入(MoneyKind.Yen10);
-            投入口.投入(MoneyKind.Yen10);
-            投入口.投入(MoneyKind.Yen10);
+            Enumerable.Range(1, 5).ToList()
+                .ForEach(i => 投入口.投入(MoneyKind.Yen10));
 
             投入金額.Get合計金額().Is(50);
         }
