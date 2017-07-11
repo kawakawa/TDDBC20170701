@@ -6,25 +6,42 @@ namespace VendingMachine
     public class 投入金額
     {
 
-        private static List<Money.Money> Money=new List<Money.Money>();
+        private static 投入金額 _投入金額;
+
+        /// <summary>
+        /// 投入金額歴
+        /// </summary>
+        private readonly List<Money.Money> _insertMoneyHistories;
 
 
-
-        public static int Get合計金額()
+        private 投入金額()
         {
-            return Money.Sum(n=>n.Value);
+            _insertMoneyHistories=new List<Money.Money>();
         }
 
 
-        public static void Add投入金(Money.Money money)
+
+        public static 投入金額 投入金額Factory()
         {
-            Money.Add(money);
+            return _投入金額 ?? (_投入金額 = new 投入金額());
         }
 
 
-        public static void 初期化()
+        public int Get合計金額()
         {
-            Money.Clear();
+            return _insertMoneyHistories.Sum(n=>n.Value);
+        }
+
+
+        public void Add投入金(Money.Money money)
+        {
+            _insertMoneyHistories.Add(money);
+        }
+
+
+        public  void 初期化()
+        {
+            _insertMoneyHistories.Clear();
         }
     }
 }
