@@ -43,6 +43,7 @@
     <Compile Include="投入口.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="投入金額.cs" />
+    <Compile Include="釣銭.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Money\Money.csproj">

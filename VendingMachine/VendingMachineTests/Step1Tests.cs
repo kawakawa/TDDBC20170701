@@ -100,5 +100,14 @@ namespace VendingMachineTests
         }
 
 
+
+        [TestMethod]
+        public void _10円玉を投入して払い戻しをすると釣銭10円が戻ってくる()
+        {
+            var _釣銭=new 釣銭();
+            _釣銭.Get合計金額().Is(10);
+        }
+
+
     }
 }
