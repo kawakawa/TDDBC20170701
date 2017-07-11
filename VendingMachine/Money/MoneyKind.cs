@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace VendingMachine
+namespace Money
 {
     public class MoneyKind
     {
         //10円玉
-        public static Money Yen10 => new Money(10,MoneyType.コイン);
+        public static Money Yen10 => new Money(10, MoneyType.コイン);
 
         //50円玉
         public static Money Yen50 => new Money(50, MoneyType.コイン);
@@ -22,9 +22,8 @@ namespace VendingMachine
 
         //1000円札
         public static Money Yen1000 => new Money(1000, MoneyType.札);
-       
 
-        
+
+
     }
-
 }

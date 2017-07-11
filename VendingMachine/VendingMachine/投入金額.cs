@@ -14,8 +14,8 @@ namespace VendingMachine
         }
 
 
-        private static Money money;
-        public static void Add投入金(Money money)
+        private static Money.Money money;
+        public static void Add投入金(Money.Money money)
         {
             投入金額.money = money;
         }

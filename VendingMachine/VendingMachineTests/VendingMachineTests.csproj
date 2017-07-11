@@ -57,6 +57,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Money\Money.csproj">
+      <Project>{54518cb3-b6a6-451e-976e-bf5861973b4b}</Project>
+      <Name>Money</Name>
+    </ProjectReference>
     <ProjectReference Include="..\VendingMachine\VendingMachine.csproj">
       <Project>{8af1103c-97ff-4a2b-96dd-354d1893d175}</Project>
       <Name>VendingMachine</Name>
