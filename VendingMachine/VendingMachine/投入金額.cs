@@ -25,7 +25,7 @@ namespace VendingMachine
         }
 
 
-        public static void 投入金額Clear()
+        public static void 初期化()
         {
             _money.Clear();
         }
