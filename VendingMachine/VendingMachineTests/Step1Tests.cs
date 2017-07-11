@@ -42,6 +42,13 @@ namespace VendingMachineTests
             投入金額.Get合計金額().Is(500);
         }
 
+        [TestMethod]
+        public void _1000円札を投入して投入金額が1000円になる()
+        {
+            投入金額.初期化();
+            投入口.投入(MoneyKind.Yen1000);
+            投入金額.Get合計金額().Is(1000);
+        }
 
         [TestMethod]
         public void _10円玉を5回投入して投入金額が50円になる()
