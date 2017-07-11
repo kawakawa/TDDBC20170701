@@ -11,7 +11,6 @@ namespace VendingMachine
 
         public static void 投入(Money.Money money)
         {
-
             投入金額.Add投入金(money);
         }
     }
