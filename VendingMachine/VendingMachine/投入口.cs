@@ -1,6 +1,7 @@
 ﻿using System;
 using System.CodeDom;
 using System.Dynamic;
+using VendingMachine.Rules;
 
 namespace VendingMachine
 {
@@ -28,21 +29,11 @@ namespace VendingMachine
             if(_投入金額==null)
                 throw new NullReferenceException(nameof(_投入金額));
 
-
-            if (投入金== Money.MoneyKind.Yen1
-                ||
-                投入金== Money.MoneyKind.Yen5
-                ||
-                投入金== Money.MoneyKind.Yen2000
-                ||
-                投入金== Money.MoneyKind.Yen5000
-                ||
-                投入金== Money.MoneyKind.Yen10000)
+            if (取扱硬貨.Is取扱対象硬貨(投入金)==false)
             {
                 _取扱外金 = 投入金;
                 return;
             }
-
 
             _投入金額.Add投入金(投入金);
         }
