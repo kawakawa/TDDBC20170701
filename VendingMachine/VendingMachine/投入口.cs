@@ -7,8 +7,10 @@ namespace VendingMachine
     public class 投入口
     {
         private static 投入口 _投入口;
-        private static 投入金額 _投入金額;
-        private static Money.Money _取扱外金;
+
+        private 投入金額 _投入金額;
+
+        private Money.Money _取扱外金;
 
         private 投入口(投入金額 投入金額)
         {
@@ -26,9 +28,12 @@ namespace VendingMachine
             if(_投入金額==null)
                 throw new NullReferenceException(nameof(_投入金額));
 
-            if (投入金 == Money.MoneyKind.Yen1
+
+            if (Equals(投入金, Money.MoneyKind.Yen1)
                 ||
-                投入金 == Money.MoneyKind.Yen5)
+                Equals(投入金, Money.MoneyKind.Yen5)
+                ||
+                Equals(投入金, Money.MoneyKind.Yen2000))
             {
                 _取扱外金 = 投入金;
                 return;
@@ -40,6 +45,9 @@ namespace VendingMachine
 
         public Money.Money Get取扱外金()
         {
+            if(_取扱外金==null)
+                throw new NullReferenceException(nameof(_取扱外金));
+
             return _取扱外金;
         }
     }
