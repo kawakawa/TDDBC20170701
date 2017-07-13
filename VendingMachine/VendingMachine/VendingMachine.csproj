@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Rules\取扱硬貨.cs" />
+    <Compile Include="取扱外金.cs" />
     <Compile Include="投入口.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="投入金額.cs" />

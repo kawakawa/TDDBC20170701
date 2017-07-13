@@ -28,7 +28,7 @@ namespace VendingMachineTests
             _投入口.投入(MoneyKind.Yen1);
 
             var 取扱外金 = _投入口.Get取扱外金();
-            取扱外金.Sum(n=>n.Value).Is(1);
+            取扱外金.Get合計金額().Is(1);
         }
 
         [TestMethod]
@@ -37,7 +37,7 @@ namespace VendingMachineTests
             _投入口.投入(MoneyKind.Yen5);
 
             var 取扱外金 = _投入口.Get取扱外金();
-            取扱外金.Sum(n => n.Value).Is(5);
+            取扱外金.Get合計金額().Is(5);
         }
 
 
@@ -47,7 +47,7 @@ namespace VendingMachineTests
             _投入口.投入(MoneyKind.Yen2000);
 
             var 取扱外金 = _投入口.Get取扱外金();
-            取扱外金.Sum(n => n.Value).Is(2000);
+            取扱外金.Get合計金額().Is(2000);
         }
 
         [TestMethod]
@@ -56,7 +56,7 @@ namespace VendingMachineTests
             _投入口.投入(MoneyKind.Yen5000);
 
             var 取扱外金 = _投入口.Get取扱外金();
-            取扱外金.Sum(n => n.Value).Is(5000);
+            取扱外金.Get合計金額().Is(5000);
         }
 
         [TestMethod]
@@ -65,7 +65,7 @@ namespace VendingMachineTests
             _投入口.投入(MoneyKind.Yen10000);
 
             var 取扱外金 = _投入口.Get取扱外金();
-            取扱外金.Sum(n => n.Value).Is(10000);
+            取扱外金.Get合計金額().Is(10000);
         }
 
 
@@ -76,7 +76,7 @@ namespace VendingMachineTests
                 .ForEach(i => _投入口.投入(MoneyKind.Yen1));
 
             var 取扱外金 = _投入口.Get取扱外金();
-            取扱外金.Sum(n => n.Value).Is(5);
+            取扱外金.Get合計金額().Is(5);
         }
 
 
@@ -89,7 +89,7 @@ namespace VendingMachineTests
             _投入口.投入(MoneyKind.Yen5);
 
             var 取扱外金 = _投入口.Get取扱外金();
-            取扱外金.Sum(n => n.Value).Is(10);
+            取扱外金.Get合計金額().Is(10);
         }
     }
 }
