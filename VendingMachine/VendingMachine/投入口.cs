@@ -9,16 +9,13 @@ namespace VendingMachine
 
         private readonly 投入金額 _投入金額;
 
-        private readonly 取扱外金 _取扱外金;
-
-
+        private readonly 釣銭口 _釣銭口;
 
         private 投入口(投入金額 投入金額)
         {
             _投入金額 = 投入金額 ?? throw new ArgumentNullException(nameof(投入金額));
 
-            //初期化
-            _取扱外金 =new 取扱外金();
+            _釣銭口 = 釣銭口.釣銭口Factory();
         }
 
 
@@ -32,19 +29,12 @@ namespace VendingMachine
         {
             if (取扱硬貨.Is取扱対象硬貨(投入金)==false)
             {
-                _取扱外金.Add(投入金);
+                _釣銭口.Add取扱外(投入金);
                 return;
             }
 
             _投入金額.Add投入金(投入金);
         }
 
-
-        public 取扱外金 Get取扱外金()
-        {
-            var 返却用取扱外金 = _取扱外金.Clone();
-            _取扱外金.初期化();
-            return 返却用取扱外金;
-        }
     }
 }

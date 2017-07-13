@@ -12,6 +12,7 @@ namespace VendingMachineTests
 
         private 投入金額 _投入金額;
         private 投入口 _投入口;
+        private 釣銭口 _釣銭口;
 
         [TestInitialize]
         public void TestIniitialize()
@@ -19,6 +20,7 @@ namespace VendingMachineTests
             _投入金額 = 投入金額.投入金額Factory();
             _投入金額.初期化();
             _投入口 = 投入口.投入口Factory(_投入金額);
+            _釣銭口 = 釣銭口.釣銭口Factory();
         }
 
 
@@ -27,7 +29,7 @@ namespace VendingMachineTests
         {
             _投入口.投入(MoneyKind.Yen1);
 
-            var 取扱外金 = _投入口.Get取扱外金();
+            var 取扱外金 = _釣銭口.Get取扱外金();
             取扱外金.Get合計金額().Is(1);
         }
 
@@ -36,7 +38,7 @@ namespace VendingMachineTests
         {
             _投入口.投入(MoneyKind.Yen5);
 
-            var 取扱外金 = _投入口.Get取扱外金();
+            var 取扱外金 = _釣銭口.Get取扱外金();
             取扱外金.Get合計金額().Is(5);
         }
 
@@ -46,7 +48,7 @@ namespace VendingMachineTests
         {
             _投入口.投入(MoneyKind.Yen2000);
 
-            var 取扱外金 = _投入口.Get取扱外金();
+            var 取扱外金 = _釣銭口.Get取扱外金();
             取扱外金.Get合計金額().Is(2000);
         }
 
@@ -55,7 +57,7 @@ namespace VendingMachineTests
         {
             _投入口.投入(MoneyKind.Yen5000);
 
-            var 取扱外金 = _投入口.Get取扱外金();
+            var 取扱外金 = _釣銭口.Get取扱外金();
             取扱外金.Get合計金額().Is(5000);
         }
 
@@ -64,7 +66,7 @@ namespace VendingMachineTests
         {
             _投入口.投入(MoneyKind.Yen10000);
 
-            var 取扱外金 = _投入口.Get取扱外金();
+            var 取扱外金 = _釣銭口.Get取扱外金();
             取扱外金.Get合計金額().Is(10000);
         }
 
@@ -75,7 +77,7 @@ namespace VendingMachineTests
             Enumerable.Range(1, 5).ToList()
                 .ForEach(i => _投入口.投入(MoneyKind.Yen1));
 
-            var 取扱外金 = _投入口.Get取扱外金();
+            var 取扱外金 = _釣銭口.Get取扱外金();
             取扱外金.Get合計金額().Is(5);
         }
 
@@ -88,7 +90,7 @@ namespace VendingMachineTests
 
             _投入口.投入(MoneyKind.Yen5);
 
-            var 取扱外金 = _投入口.Get取扱外金();
+            var 取扱外金 = _釣銭口.Get取扱外金();
             取扱外金.Get合計金額().Is(10);
         }
     }
