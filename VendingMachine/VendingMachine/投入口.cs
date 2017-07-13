@@ -35,7 +35,9 @@ namespace VendingMachine
                 ||
                 Equals(投入金, Money.MoneyKind.Yen2000)
                 ||
-                Equals(投入金, Money.MoneyKind.Yen5000))
+                Equals(投入金, Money.MoneyKind.Yen5000)
+                ||
+                Equals(投入金, Money.MoneyKind.Yen10000))
             {
                 _取扱外金 = 投入金;
                 return;
