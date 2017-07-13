@@ -15,7 +15,7 @@ namespace VendingMachine
 
         private 投入口(投入金額 投入金額)
         {
-            _投入金額 = 投入金額 ?? throw new NullReferenceException(nameof(投入金額));
+            _投入金額 = 投入金額 ?? throw new ArgumentNullException(nameof(投入金額));
         }
 
         public static 投入口 投入口Factory(投入金額 投入金額)
