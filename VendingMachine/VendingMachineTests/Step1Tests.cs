@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Money;
 using VendingMachine;
@@ -22,49 +23,60 @@ namespace VendingMachineTests
 
 
         [TestMethod]
-        public void _1円玉を入れたらそのまま釣銭として1円がでてくる()
+        public void _1円玉を入れたら取扱外金として1円がでてくる()
         {
             _投入口.投入(MoneyKind.Yen1);
 
             var 取扱外金 = _投入口.Get取扱外金();
-            取扱外金.Value.Is(1);
+            取扱外金.Sum(n=>n.Value).Is(1);
         }
 
         [TestMethod]
-        public void _5円玉を入れたらそのまま釣銭として5円がでてくる()
+        public void _5円玉を入れたら取扱外金として5円がでてくる()
         {
             _投入口.投入(MoneyKind.Yen5);
 
             var 取扱外金 = _投入口.Get取扱外金();
-            取扱外金.Value.Is(5);
+            取扱外金.Sum(n => n.Value).Is(5);
         }
 
 
         [TestMethod]
-        public void _2000円札を入れたらそのまま釣銭として2000円がでてくる()
+        public void _2000円札を入れたら取扱外金として2000円がでてくる()
         {
             _投入口.投入(MoneyKind.Yen2000);
 
             var 取扱外金 = _投入口.Get取扱外金();
-            取扱外金.Value.Is(2000);
+            取扱外金.Sum(n => n.Value).Is(2000);
         }
 
         [TestMethod]
-        public void _5000円札を入れたらそのまま釣銭として5000円がでてくる()
+        public void _5000円札を入れたら取扱外金として5000円がでてくる()
         {
             _投入口.投入(MoneyKind.Yen5000);
 
             var 取扱外金 = _投入口.Get取扱外金();
-            取扱外金.Value.Is(5000);
+            取扱外金.Sum(n => n.Value).Is(5000);
         }
 
         [TestMethod]
-        public void _10000円札を入れたらそのまま釣銭として10000円がでてくる()
+        public void _10000円札を入れたら取扱外金として10000円がでてくる()
         {
             _投入口.投入(MoneyKind.Yen10000);
 
             var 取扱外金 = _投入口.Get取扱外金();
-            取扱外金.Value.Is(10000);
+            取扱外金.Sum(n => n.Value).Is(10000);
+        }
+
+
+        [TestMethod]
+        public void _1円玉を5回投入したら取扱外金として5円取得できる()
+        {
+            Enumerable.Range(1, 5).ToList()
+                .ForEach(i => _投入口.投入(MoneyKind.Yen1));
+
+            var 取扱外金 = _投入口.Get取扱外金();
+            取扱外金.Sum(n => n.Value).Is(5);
         }
 
     }
