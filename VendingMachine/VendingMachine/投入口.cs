@@ -29,15 +29,15 @@ namespace VendingMachine
                 throw new NullReferenceException(nameof(_投入金額));
 
 
-            if (Equals(投入金, Money.MoneyKind.Yen1)
+            if (投入金== Money.MoneyKind.Yen1
                 ||
-                Equals(投入金, Money.MoneyKind.Yen5)
+                投入金== Money.MoneyKind.Yen5
                 ||
-                Equals(投入金, Money.MoneyKind.Yen2000)
+                投入金== Money.MoneyKind.Yen2000
                 ||
-                Equals(投入金, Money.MoneyKind.Yen5000)
+                投入金== Money.MoneyKind.Yen5000
                 ||
-                Equals(投入金, Money.MoneyKind.Yen10000))
+                投入金== Money.MoneyKind.Yen10000)
             {
                 _取扱外金 = 投入金;
                 return;
