@@ -1,6 +1,4 @@
 ﻿using System;
-using System.CodeDom;
-using System.Dynamic;
 using VendingMachine.Rules;
 
 namespace VendingMachine
@@ -9,13 +7,15 @@ namespace VendingMachine
     {
         private static 投入口 _投入口;
 
-        private 投入金額 _投入金額;
+        private readonly 投入金額 _投入金額;
 
         private Money.Money _取扱外金;
 
+
+
         private 投入口(投入金額 投入金額)
         {
-            _投入金額 = 投入金額;
+            _投入金額 = 投入金額 ?? throw new NullReferenceException(nameof(投入金額));
         }
 
         public static 投入口 投入口Factory(投入金額 投入金額)
@@ -26,9 +26,6 @@ namespace VendingMachine
 
         public void 投入(Money.Money 投入金)
         {
-            if(_投入金額==null)
-                throw new NullReferenceException(nameof(_投入金額));
-
             if (取扱硬貨.Is取扱対象硬貨(投入金)==false)
             {
                 _取扱外金 = 投入金;
