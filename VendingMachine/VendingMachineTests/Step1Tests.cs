@@ -118,5 +118,15 @@ namespace VendingMachineTests
             釣銭.Get合計金額().Is(50);
         }
 
+        [TestMethod]
+        public void _10円玉を5回投入して払い戻しをすると釣銭50円が戻ってくる()
+        {
+            Enumerable.Range(1, 5).ToList()
+                .ForEach(i => _投入口.投入(MoneyKind.Yen10));
+
+            var 釣銭 = _投入金額.払い戻し();
+            釣銭.Get合計金額().Is(50);
+        }
+
     }
 }
