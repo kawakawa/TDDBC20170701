@@ -79,5 +79,17 @@ namespace VendingMachineTests
             取扱外金.Sum(n => n.Value).Is(5);
         }
 
+
+        [TestMethod]
+        public void _1円玉を5回投入し5円玉を投入したら取扱外金として10円取得できる()
+        {
+            Enumerable.Range(1, 5).ToList()
+                .ForEach(i => _投入口.投入(MoneyKind.Yen1));
+
+            _投入口.投入(MoneyKind.Yen5);
+
+            var 取扱外金 = _投入口.Get取扱外金();
+            取扱外金.Sum(n => n.Value).Is(10);
+        }
     }
 }
