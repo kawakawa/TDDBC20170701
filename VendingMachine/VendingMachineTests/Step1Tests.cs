@@ -1,9 +1,7 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Money;
 using VendingMachine;
-using Money = Money.Money;
 
 namespace VendingMachineTests
 {
@@ -106,8 +104,8 @@ namespace VendingMachineTests
         {
             _投入口.投入(MoneyKind.Yen10);
 
-            var _釣銭 = _投入金額.払い戻し();
-            _釣銭.Get合計金額().Is(10);
+            var 釣銭 = _投入金額.払い戻し();
+            釣銭.Get合計金額().Is(10);
         }
 
 
@@ -116,8 +114,8 @@ namespace VendingMachineTests
         {
             _投入口.投入(MoneyKind.Yen50);
 
-            var _釣銭 = _投入金額.払い戻し();
-            _釣銭.Get合計金額().Is(50);
+            var 釣銭 = _投入金額.払い戻し();
+            釣銭.Get合計金額().Is(50);
         }
 
     }
