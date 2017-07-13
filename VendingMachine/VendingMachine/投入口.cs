@@ -35,6 +35,7 @@ namespace VendingMachine
             _投入金額.Add投入金(投入金);
         }
 
+
         public Money.Money Get取扱外金()
         {
             if(_取扱外金==null)
