@@ -29,5 +29,14 @@ namespace VendingMachineTests
             var 取扱外金 = _投入口.Get取扱外金();
             取扱外金.Value.Is(1);
         }
+
+        [TestMethod]
+        public void _5円玉を入れたらそのまま釣銭として5円がでてくる()
+        {
+            _投入口.投入(MoneyKind.Yen5);
+
+            var 取扱外金 = _投入口.Get取扱外金();
+            取扱外金.Value.Is(5);
+        }
     }
 }

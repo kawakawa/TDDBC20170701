@@ -26,7 +26,9 @@ namespace VendingMachine
             if(_投入金額==null)
                 throw new NullReferenceException(nameof(_投入金額));
 
-            if (投入金 == Money.MoneyKind.Yen1)
+            if (投入金 == Money.MoneyKind.Yen1
+                ||
+                投入金 == Money.MoneyKind.Yen5)
             {
                 _取扱外金 = 投入金;
                 return;
