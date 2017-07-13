@@ -8,6 +8,12 @@ namespace Money
 {
     public class MoneyKind
     {
+        //1円玉
+        public static Money Yen1 = new Money(1,MoneyType.コイン);
+
+        //5円玉
+        public static Money Yen5 = new Money(5,MoneyType.コイン);
+
         //10円玉
         public static Money Yen10 => new Money(10, MoneyType.コイン);
 
@@ -23,7 +29,14 @@ namespace Money
         //1000円札
         public static Money Yen1000 => new Money(1000, MoneyType.札);
 
+        //2000円札
+        public static Money Yen2000=> new Money(2000,MoneyType.札);
 
+        //5000円札
+        public static Money Yen50000 => new Money(5000,MoneyType.札);
+
+        //一万円
+        public static  Money Yen10000 => new Money(10000,MoneyType.札);
 
     }
 }
