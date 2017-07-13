@@ -8,7 +8,7 @@ namespace VendingMachine
     {
         private static 投入口 _投入口;
         private static 投入金額 _投入金額;
-
+        private static Money.Money _取扱外金;
 
         private 投入口(投入金額 投入金額)
         {
@@ -26,7 +26,19 @@ namespace VendingMachine
             if(_投入金額==null)
                 throw new NullReferenceException(nameof(_投入金額));
 
+            if (投入金 == Money.MoneyKind.Yen1)
+            {
+                _取扱外金 = 投入金;
+                return;
+            }
+
+
             _投入金額.Add投入金(投入金);
+        }
+
+        public Money.Money Get取扱外金()
+        {
+            return _取扱外金;
         }
     }
 }

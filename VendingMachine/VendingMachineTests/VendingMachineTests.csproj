@@ -52,6 +52,7 @@
     <Compile Include="ChainingAssertion.MSTest.cs" />
     <Compile Include="Step0Tests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Step1Tests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
