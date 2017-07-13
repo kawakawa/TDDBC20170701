@@ -33,7 +33,7 @@ namespace Money
         public static Money Yen2000=> new Money(2000,MoneyType.札);
 
         //5000円札
-        public static Money Yen50000 => new Money(5000,MoneyType.札);
+        public static Money Yen5000 => new Money(5000,MoneyType.札);
 
         //一万円
         public static  Money Yen10000 => new Money(10000,MoneyType.札);

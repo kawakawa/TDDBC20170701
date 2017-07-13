@@ -49,6 +49,14 @@ namespace VendingMachineTests
             取扱外金.Value.Is(2000);
         }
 
+        [TestMethod]
+        public void _5000円札を入れたらそのまま釣銭として5000円がでてくる()
+        {
+            _投入口.投入(MoneyKind.Yen5000);
+
+            var 取扱外金 = _投入口.Get取扱外金();
+            取扱外金.Value.Is(5000);
+        }
 
 
     }
