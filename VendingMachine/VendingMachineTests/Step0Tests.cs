@@ -6,7 +6,7 @@ using VendingMachine;
 namespace VendingMachineTests
 {
     [TestClass]
-    public class Step1Tests
+    public class Step0Tests
     {
 
         private 投入金額 _投入金額;
