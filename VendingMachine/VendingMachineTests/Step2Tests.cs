@@ -12,7 +12,7 @@ namespace VendingMachineTests
         public void コーラを1本在庫として格納できる()
         {
             //コーラ
-            var coke = Item.Factory.ジュース.Factory("コーラ", 100);
+            var coke = Item.Items.Drink.Factory("コーラ", 100);
 
             var itemラック = Itemラック.ItemラックFactory();
 

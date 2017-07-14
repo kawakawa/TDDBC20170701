@@ -12,7 +12,7 @@ namespace Item
         public String Name { get; }
         public int Price { get; }
 
-        private Item(string name,int price)
+        protected Item(string name,int price)
         {
             Name = name;
             Price = price;
