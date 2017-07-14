@@ -9,7 +9,7 @@ namespace Item
 {
     public class Item
     {
-        public String Name { get; }
+        public string Name { get; }
         public int Price { get; }
 
         protected Item(string name,int price)
