@@ -4,12 +4,12 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{8AF1103C-97FF-4A2B-96DD-354D1893D175}</ProjectGuid>
+    <ProjectGuid>{0F54C2CB-0D30-4201-BD09-8AD4C230F9B8}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>VendingMachine</RootNamespace>
-    <AssemblyName>VendingMachine</AssemblyName>
-    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <RootNamespace>Item</RootNamespace>
+    <AssemblyName>Item</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -40,24 +40,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Itemラック.cs" />
-    <Compile Include="Rules\取扱硬貨.cs" />
-    <Compile Include="取扱外金.cs" />
-    <Compile Include="投入口.cs" />
+    <Compile Include="Factory\ジュース.cs" />
+    <Compile Include="Item.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="投入金額.cs" />
-    <Compile Include="釣銭.cs" />
-    <Compile Include="釣銭口.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Item\Item.csproj">
-      <Project>{0f54c2cb-0d30-4201-bd09-8ad4c230f9b8}</Project>
-      <Name>Item</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Money\Money.csproj">
-      <Project>{54518cb3-b6a6-451e-976e-bf5861973b4b}</Project>
-      <Name>Money</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -53,11 +53,16 @@
     <Compile Include="Step0Tests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Step1Tests.cs" />
+    <Compile Include="Step2Tests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Item\Item.csproj">
+      <Project>{0f54c2cb-0d30-4201-bd09-8ad4c230f9b8}</Project>
+      <Name>Item</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Money\Money.csproj">
       <Project>{54518cb3-b6a6-451e-976e-bf5861973b4b}</Project>
       <Name>Money</Name>
