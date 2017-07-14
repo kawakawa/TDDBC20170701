@@ -16,7 +16,7 @@ namespace VendingMachineTests
         public void TestIniitialize()
         {
             _投入金額 = 投入金額.投入金額Factory();
-            _投入金額.初期化();
+            _投入金額.投入金額歴初期化();
             _投入口 = 投入口.投入口Factory(_投入金額);
         }
 
@@ -104,8 +104,11 @@ namespace VendingMachineTests
         {
             _投入口.投入(MoneyKind.Yen10);
 
-            var 釣銭 = _投入金額.払い戻し();
-            釣銭.Get合計金額().Is(10);
+            _投入金額.払い戻し();
+
+            釣銭口.釣銭口Factory()
+                 .Get釣銭()
+                 .Get合計金額().Is(10);
         }
 
 
@@ -114,8 +117,10 @@ namespace VendingMachineTests
         {
             _投入口.投入(MoneyKind.Yen50);
 
-            var 釣銭 = _投入金額.払い戻し();
-            釣銭.Get合計金額().Is(50);
+            _投入金額.払い戻し();
+            釣銭口.釣銭口Factory()
+                .Get釣銭()
+                .Get合計金額().Is(50);
         }
 
         [TestMethod]
@@ -124,8 +129,10 @@ namespace VendingMachineTests
             Enumerable.Range(1, 5).ToList()
                 .ForEach(i => _投入口.投入(MoneyKind.Yen10));
 
-            var 釣銭 = _投入金額.払い戻し();
-            釣銭.Get合計金額().Is(50);
+            _投入金額.払い戻し();
+            釣銭口.釣銭口Factory()
+                .Get釣銭()
+                .Get合計金額().Is(50);
         }
 
     }
