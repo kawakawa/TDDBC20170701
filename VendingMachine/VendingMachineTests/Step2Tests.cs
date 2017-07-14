@@ -18,12 +18,11 @@ namespace VendingMachineTests
 
             itemラック.SetItem(coke);
 
-            var 在庫リスト = itemラック.GetItemList();
-            在庫リスト.Count().Is(1);
-            在庫リスト.First().Name.Is(coke.Name);
-            在庫リスト.First().Value.Is(coke.Value);
-
-
+            var 格納アイテムリスト = itemラック.GetItemList();
+            格納アイテムリスト.Count().Is(1);
+            格納アイテムリスト.First().Name.Is(coke.Name);
+            格納アイテムリスト.First().Price.Is(coke.Price);
+            
         }
     }
 }

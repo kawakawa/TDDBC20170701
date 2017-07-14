@@ -10,18 +10,18 @@ namespace Item
     public class Item
     {
         public String Name { get; }
-        public int Value { get; }
+        public int Price { get; }
 
-        private Item(string name,int value)
+        private Item(string name,int price)
         {
             Name = name;
-            Value = value;
+            Price = price;
         }
 
 
-        public static Item ItemFactory(string name, int value)
+        public static Item ItemFactory(string name, int price)
         {
-            return new Item(name,value);
+            return new Item(name,price);
         }
 
 
