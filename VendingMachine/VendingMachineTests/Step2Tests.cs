@@ -19,7 +19,7 @@ namespace VendingMachineTests
             _itemラック.格納アイテム初期化();
         }
 
-        public static Item.Item GetCoke()
+        public static Item.Item MakeCokeDrink()
         {
             return Item.Items.Drink.Factory("コーラ", 100);
         }
@@ -30,7 +30,7 @@ namespace VendingMachineTests
         public void コーラを1本在庫として格納できる()
         {
             //コーラ
-            var coke = GetCoke();
+            var coke = MakeCokeDrink();
 
             //ラックに格納
             _itemラック.SetItem(coke);
@@ -46,7 +46,7 @@ namespace VendingMachineTests
         public void コーラを5本在庫として格納できる()
         {
             //コーラ
-            var coke = GetCoke();
+            var coke = MakeCokeDrink();
             
             Enumerable.Range(1, 5).ToList()
                 .ForEach(i => _itemラック.SetItem(coke));
