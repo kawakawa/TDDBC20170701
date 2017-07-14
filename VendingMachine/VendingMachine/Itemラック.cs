@@ -10,7 +10,7 @@ namespace VendingMachine
     {
         private static Itemラック _itemラック;
 
-        private List<Item.Item> _格納アイテムリスト;
+        private readonly List<Item.Item> _格納アイテムリスト;
 
         private Itemラック()
         {
