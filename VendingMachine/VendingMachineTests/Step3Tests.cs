@@ -218,7 +218,7 @@ namespace VendingMachineTests
 
 
         [TestMethod]
-        public void _100円コーラの在庫がある状態で100円で購入して売上金額が100円となるか()
+        public void _100円コーラの在庫がある状態で1本購入して売上金額が100円となるか()
         {
 
             //ラックにcoke格納
