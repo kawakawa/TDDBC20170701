@@ -96,7 +96,7 @@ namespace VendingMachineTests
 
             スイッチ.購入();
 
-            受取口.Getアイテム().Name.Is(_coke.Name);
+            アイテム受取口.Getアイテム().Name.Is(_coke.Name);
 
             釣銭口.釣銭口Factory()
                 .Get釣銭()

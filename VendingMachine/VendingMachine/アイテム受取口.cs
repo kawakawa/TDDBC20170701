@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace VendingMachine
+﻿namespace VendingMachine
 {
-    public class 受取口
+    public class アイテム受取口
     {
         public static Item.Item Getアイテム()
         {
