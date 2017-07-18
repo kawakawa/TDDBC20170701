@@ -13,11 +13,11 @@ namespace VendingMachine.Rules
             var itemラック = Itemラック.ItemラックFactory();
 
             //在庫なし=>購入不可
-            if (itemラック.GetItemList().All(n => n.Name != 対象ItemName))
+            if (itemラック.Get格納アイテムリスト().All(n => n.Name != 対象ItemName))
                 return false;
 
 
-            var 対象アイテム = itemラック.GetItemList()
+            var 対象アイテム = itemラック.Get格納アイテムリスト()
                                         .First(n=>n.Name== 対象ItemName);
 
             var 投入額 = 投入金額.投入金額Factory();

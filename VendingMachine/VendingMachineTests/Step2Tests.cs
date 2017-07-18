@@ -33,9 +33,9 @@ namespace VendingMachineTests
             var coke = MakeCokeDrink();
 
             //ラックに格納
-            _itemラック.SetItem(coke);
+            _itemラック.Setアイテム(coke);
 
-            var 格納アイテムリスト = _itemラック.GetItemList();
+            var 格納アイテムリスト = _itemラック.Get格納アイテムリスト();
             格納アイテムリスト.Count().Is(1);
             格納アイテムリスト.First().Name.Is(coke.Name);
             格納アイテムリスト.First().Price.Is(coke.Price);
@@ -49,9 +49,9 @@ namespace VendingMachineTests
             var coke = MakeCokeDrink();
             
             Enumerable.Range(1, 5).ToList()
-                .ForEach(i => _itemラック.SetItem(coke));
+                .ForEach(i => _itemラック.Setアイテム(coke));
 
-            var 格納アイテムリスト = _itemラック.GetItemList();
+            var 格納アイテムリスト = _itemラック.Get格納アイテムリスト();
             格納アイテムリスト.Count().Is(5);
             格納アイテムリスト.All(n => n.Name == coke.Name).IsTrue();
             格納アイテムリスト.All(n => n.Price == coke.Price).IsTrue();

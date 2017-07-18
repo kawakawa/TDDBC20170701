@@ -43,7 +43,7 @@ namespace VendingMachineTests
         {
 
             //ラックにcoke格納
-            _itemラック.SetItem(_coke);
+            _itemラック.Setアイテム(_coke);
 
             //お金投入
             _投入口.投入(MoneyKind.Yen100);
@@ -59,7 +59,7 @@ namespace VendingMachineTests
         public void _100円コーラの在庫がある状態で10円投入して購入不可状態となるか()
         {
             //ラックにcoke格納
-            _itemラック.SetItem(_coke);
+            _itemラック.Setアイテム(_coke);
 
             //お金投入
             _投入口.投入(MoneyKind.Yen10);
