@@ -3,10 +3,10 @@ using System.Linq;
 
 namespace VendingMachine
 {
-    public class 投入金額
+    public class 投入金額管理
     {
 
-        private static 投入金額 _投入金額;
+        private static 投入金額管理 _投入金額管理;
 
         /// <summary>
         /// 投入金額歴
@@ -14,16 +14,16 @@ namespace VendingMachine
         private readonly List<Money.Money> _投入金額歴;
 
 
-        private 投入金額()
+        private 投入金額管理()
         {
             _投入金額歴=new List<Money.Money>();
         }
 
 
 
-        public static 投入金額 投入金額Factory()
+        public static 投入金額管理 投入金額Factory()
         {
-            return _投入金額 ?? (_投入金額 = new 投入金額());
+            return _投入金額管理 ?? (_投入金額管理 = new 投入金額管理());
         }
 
 

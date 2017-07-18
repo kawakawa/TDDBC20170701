@@ -10,16 +10,16 @@ namespace VendingMachineTests
     public class Step1Tests
     {
 
-        private 投入金額 _投入金額;
+        private 投入金額管理 _投入金額管理;
         private 投入口 _投入口;
         private 釣銭口 _釣銭口;
 
         [TestInitialize]
         public void TestIniitialize()
         {
-            _投入金額 = 投入金額.投入金額Factory();
-            _投入金額.投入金額歴初期化();
-            _投入口 = 投入口.投入口Factory(_投入金額);
+            _投入金額管理 = 投入金額管理.投入金額Factory();
+            _投入金額管理.投入金額歴初期化();
+            _投入口 = 投入口.投入口Factory(_投入金額管理);
             _釣銭口 = 釣銭口.釣銭口Factory();
         }
 
