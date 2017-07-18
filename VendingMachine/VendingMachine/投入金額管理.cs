@@ -50,5 +50,24 @@ namespace VendingMachine
         {
             _投入金額歴.Clear();
         }
+
+
+        public 投入金額管理 Set購入金額(int 購入金額)
+        {
+            //投入金額-購入額
+            var 差額値 = _投入金額歴.Sum(n => n.Value) - 購入金額;
+
+
+            //差額分の金額用意
+            投入金額歴初期化();
+            if (差額値 != 0)
+            {
+                var 差額金額 = Money.MoneyKind.Yen10;
+                Add投入金(差額金額);
+            }
+
+
+            return this;
+        }
     }
 }

@@ -123,5 +123,27 @@ namespace VendingMachineTests
 
         }
 
+        [TestMethod]
+        public void _100円コーラの在庫がある状態で110円で購入してコーラと釣銭10円が取得できるか()
+        {
+
+            //ラックにcoke格納
+            _itemラック.Setアイテム(_coke);
+
+            //お金投入
+            _投入口.投入(MoneyKind.Yen100);
+            _投入口.投入(MoneyKind.Yen10);
+
+
+            スイッチ.購入(_coke.Name);
+
+            アイテム受取口.アイテム受取口Factory()
+                .Getアイテム().Name.Is(_coke.Name);
+
+            釣銭口.釣銭口Factory()
+                .Get釣銭()
+                .Get合計金額().Is(10);
+        }
+
     }
 }

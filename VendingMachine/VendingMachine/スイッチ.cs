@@ -15,10 +15,16 @@ namespace VendingMachine
             if(購入可否==false)
                 return;
 
-            var coke = Item.Items.Drink.Factory("コーラ", 100);
-
+            //アイテム在庫整理
+            var item = Item.Items.Drink.Factory("コーラ", 100);
             アイテム受取口.アイテム受取口Factory()
-                         .Setアイテム(coke);
+                         .Setアイテム(item);
+
+            //投入金額整理
+            投入金額管理.投入金額Factory()
+                        .Set購入金額(item.Price)
+                        .払い戻し();
+
 
         }
     }
