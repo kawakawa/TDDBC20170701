@@ -1,6 +1,4 @@
-﻿using System;
-using Item.Items;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Money;
 using VendingMachine;
 
@@ -96,8 +94,9 @@ namespace VendingMachineTests
 
             スイッチ.購入(_coke.Name);
 
-            アイテム受取口.アイテム受取口Factory()
-                         .Getアイテム().Name.Is(_coke.Name);
+            アイテム受取口
+                .アイテム受取口Factory()
+                .Getアイテム().Name.Is(_coke.Name);
 
             釣銭口.釣銭口Factory()
                 .Get釣銭()
@@ -118,8 +117,10 @@ namespace VendingMachineTests
             スイッチ.購入(_coke.Name);
 
 
-            アイテム受取口.アイテム受取口Factory()
-                .Getアイテム().IsNull();
+            アイテム受取口
+                .アイテム受取口Factory()
+                .Getアイテム()
+                .IsNull();
 
         }
 
@@ -136,7 +137,8 @@ namespace VendingMachineTests
             スイッチ.購入(_coke.Name);
 
 
-            アイテム受取口.アイテム受取口Factory()
+            アイテム受取口
+                .アイテム受取口Factory()
                 .Getアイテム().IsNull();
 
         }
@@ -155,7 +157,8 @@ namespace VendingMachineTests
 
             スイッチ.購入(_coke.Name);
 
-            アイテム受取口.アイテム受取口Factory()
+            アイテム受取口
+                .アイテム受取口Factory()
                 .Getアイテム().Name.Is(_coke.Name);
 
             釣銭口.釣銭口Factory()
