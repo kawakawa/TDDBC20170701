@@ -43,7 +43,9 @@
     <Compile Include="Itemラック.cs" />
     <Compile Include="Rules\アイテム購入.cs" />
     <Compile Include="Rules\取扱硬貨.cs" />
+    <Compile Include="スイッチ.cs" />
     <Compile Include="取扱外金.cs" />
+    <Compile Include="受取口.cs" />
     <Compile Include="投入口.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="投入金額管理.cs" />

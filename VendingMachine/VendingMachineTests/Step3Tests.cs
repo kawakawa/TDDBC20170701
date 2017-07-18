@@ -81,5 +81,23 @@ namespace VendingMachineTests
                 .Is購入可(_coke.Name)
                 .IsFalse();
         }
+
+
+        [TestMethod]
+        public void _100円コーラの在庫がある状態で100円で購入してコーラが取得できるか()
+        {
+
+            //ラックにcoke格納
+            _itemラック.Setアイテム(_coke);
+
+            //お金投入
+            _投入口.投入(MoneyKind.Yen100);
+
+
+            スイッチ.購入();
+
+            受取口.Getアイテム().Name.Is(_coke.Name);
+        }
+
     }
 }
