@@ -124,6 +124,24 @@ namespace VendingMachineTests
         }
 
         [TestMethod]
+        public void _100円コーラの在庫がない状態で100円で購入してコーラは取得できない()
+        {
+
+            //ラックにcoke未格納
+
+            //お金投入
+            _投入口.投入(MoneyKind.Yen100);
+
+
+            スイッチ.購入(_coke.Name);
+
+
+            アイテム受取口.アイテム受取口Factory()
+                .Getアイテム().IsNull();
+
+        }
+
+        [TestMethod]
         public void _100円コーラの在庫がある状態で110円で購入してコーラと釣銭10円が取得できるか()
         {
 
