@@ -11,6 +11,7 @@ namespace VendingMachineTests
         private Itemラック _itemラック;
         private 投入金額管理 _投入金額管理;
         private 投入口 _投入口;
+        private 売上金額管理 _売上金額管理;
 
         private Item.Item _coke;
 
@@ -24,6 +25,9 @@ namespace VendingMachineTests
 
             _投入金額管理= 投入金額管理.投入金額Factory();
             _投入金額管理.投入金額歴初期化();
+
+            _売上金額管理=売上金額管理.売上金額管理Factory();
+            _売上金額管理.初期化();
 
             _投入口= 投入口.投入口Factory(_投入金額管理);
         }
@@ -220,9 +224,6 @@ namespace VendingMachineTests
         [TestMethod]
         public void _100円コーラの在庫がある状態で1本購入して売上金額が100円となるか()
         {
-            var _売上金額管理 =売上金額管理.売上金額管理Factory();
-            _売上金額管理.初期化();
-
             //ラックにcoke格納
             _itemラック.Setアイテム(_coke);
             
@@ -230,8 +231,7 @@ namespace VendingMachineTests
             _投入口.投入(MoneyKind.Yen100);
             スイッチ.購入(_coke.Name);
 
-            売上金額管理.売上金額管理Factory()
-                .GetTotal売上金額()
+            _売上金額管理.GetTotal売上金額()
                 .Is(_coke.Price);
         }
 
@@ -239,9 +239,6 @@ namespace VendingMachineTests
         [TestMethod]
         public void _100円コーラの在庫がある状態で2本購入して売上金額が200円となるか()
         {
-            var _売上金額管理 = 売上金額管理.売上金額管理Factory();
-            _売上金額管理.初期化();
-
 
             //ラックにcoke格納
             _itemラック.Setアイテム(_coke);
@@ -255,8 +252,7 @@ namespace VendingMachineTests
             _投入口.投入(MoneyKind.Yen100);
             スイッチ.購入(_coke.Name);
 
-            売上金額管理.売上金額管理Factory()
-                .GetTotal売上金額()
+            _売上金額管理.GetTotal売上金額()
                 .Is(_coke.Price*2);
         }
     }
