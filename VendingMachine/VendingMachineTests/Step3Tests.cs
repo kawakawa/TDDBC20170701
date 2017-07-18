@@ -72,9 +72,10 @@ namespace VendingMachineTests
         [TestMethod]
         public void _100円コーラの在庫がない状態で100円投入して購入不可状態となるか()
         {
-
             //お金投入
             _投入口.投入(MoneyKind.Yen100);
+
+            //コーラ在庫は未セット
 
             VendingMachine.Rules.アイテム購入
                 .Is購入可(_coke.Name)
