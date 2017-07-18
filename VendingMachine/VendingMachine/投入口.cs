@@ -29,7 +29,7 @@ namespace VendingMachine
         {
             if (取扱硬貨.Is取扱対象硬貨(投入金)==false)
             {
-                _釣銭口.Add取扱外(投入金);
+                _釣銭口.Add取扱外金(投入金);
                 return;
             }
 

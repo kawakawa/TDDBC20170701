@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 
 namespace VendingMachine
@@ -20,7 +16,6 @@ namespace VendingMachine
             //初期化
             _釣銭=new 釣銭();
             _取扱外金 = new 取扱外金();
-            
         }
 
 
@@ -30,7 +25,7 @@ namespace VendingMachine
         }
 
 
-        public void Add取扱外(Money.Money 投入金)
+        public void Add取扱外金(Money.Money 投入金)
         {
             _取扱外金.Add(投入金);
         }
