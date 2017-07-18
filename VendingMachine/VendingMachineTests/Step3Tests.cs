@@ -214,5 +214,28 @@ namespace VendingMachineTests
                 .Get釣銭()
                 .Get合計金額().Is(80);
         }
+
+
+
+        [TestMethod]
+        public void _100円コーラの在庫がある状態で100円で購入して売上金額が100円となるか()
+        {
+
+            //ラックにcoke格納
+            _itemラック.Setアイテム(_coke);
+
+            //お金投入
+            _投入口.投入(MoneyKind.Yen100);
+
+
+            スイッチ.購入(_coke.Name);
+
+            売上金額管理.売上金額管理Factory()
+                .GetTotal売上金額()
+                .Is(_coke.Price);
+
+        }
+
+
     }
 }
