@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using Money;
+using VendingMachine.Rules;
 
 namespace VendingMachine
 {
@@ -52,7 +54,7 @@ namespace VendingMachine
         }
 
 
-        public 投入金額管理 Set購入金額(int 購入金額)
+        public 投入金額管理 購入金額分減算(int 購入金額)
         {
             //投入金額-購入額
             var 差額値 = _投入金額歴.Sum(n => n.Value) - 購入金額;
@@ -62,8 +64,26 @@ namespace VendingMachine
             投入金額歴初期化();
             if (差額値 != 0)
             {
-                var 差額金額 = Money.MoneyKind.Yen10;
-                Add投入金(差額金額);
+
+                while (差額値>0)
+                {
+                    var 取扱対象金 = MoneyKind.GetList()
+                        .Where(n => 取扱硬貨.Is取扱対象硬貨(n) == true)
+                        .OrderByDescending(n=>n.Value)
+                        .Select(n=>n);
+
+
+                    foreach (var money in 取扱対象金)
+                    {
+                        if (差額値 >= money.Value)
+                        {
+                            Add投入金(money);
+                            差額値 = 差額値 - money.Value;
+
+                            break;
+                        }
+                    }
+                }
             }
 
 

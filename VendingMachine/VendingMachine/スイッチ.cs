@@ -22,7 +22,7 @@ namespace VendingMachine
 
             //投入金額整理
             投入金額管理.投入金額Factory()
-                        .Set購入金額(item.Price)
+                        .購入金額分減算(item.Price)
                         .払い戻し();
 
 
