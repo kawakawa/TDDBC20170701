@@ -220,22 +220,44 @@ namespace VendingMachineTests
         [TestMethod]
         public void _100円コーラの在庫がある状態で1本購入して売上金額が100円となるか()
         {
+            var _売上金額管理 =売上金額管理.売上金額管理Factory();
+            _売上金額管理.初期化();
 
             //ラックにcoke格納
             _itemラック.Setアイテム(_coke);
-
-            //お金投入
+            
+            //購入
             _投入口.投入(MoneyKind.Yen100);
-
-
             スイッチ.購入(_coke.Name);
 
             売上金額管理.売上金額管理Factory()
                 .GetTotal売上金額()
                 .Is(_coke.Price);
-
         }
 
 
+        [TestMethod]
+        public void _100円コーラの在庫がある状態で2本購入して売上金額が200円となるか()
+        {
+            var _売上金額管理 = 売上金額管理.売上金額管理Factory();
+            _売上金額管理.初期化();
+
+
+            //ラックにcoke格納
+            _itemラック.Setアイテム(_coke);
+            _itemラック.Setアイテム(_coke);
+
+            //購入
+            _投入口.投入(MoneyKind.Yen100);
+            スイッチ.購入(_coke.Name);
+
+            //購入
+            _投入口.投入(MoneyKind.Yen100);
+            スイッチ.購入(_coke.Name);
+
+            売上金額管理.売上金額管理Factory()
+                .GetTotal売上金額()
+                .Is(_coke.Price*2);
+        }
     }
 }

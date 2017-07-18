@@ -56,6 +56,8 @@ namespace VendingMachine
 
         public 投入金額管理 購入金額分減算(int 購入金額)
         {
+            
+
             //投入金額-購入額
             var 差額値 = _投入金額歴.Sum(n => n.Value) - 購入金額;
 

@@ -10,10 +10,16 @@ namespace VendingMachine
     {
         private static 売上金額管理 _売上金額管理;
 
+        private int _売上金額;
+
         private 売上金額管理()
         {
         }
 
+        public void 初期化()
+        {
+            _売上金額 = 0;
+        }
 
 
         public static 売上金額管理 売上金額管理Factory()
@@ -23,7 +29,13 @@ namespace VendingMachine
 
         public int GetTotal売上金額()
         {
-            return 100;
+            return _売上金額;
         }
+
+        public void Add売上金(int price)
+        {
+            _売上金額 += price;
+        }
+
     }
 }
