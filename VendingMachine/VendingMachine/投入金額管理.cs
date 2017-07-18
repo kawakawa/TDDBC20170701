@@ -8,9 +8,6 @@ namespace VendingMachine
 
         private static 投入金額管理 _投入金額管理;
 
-        /// <summary>
-        /// 投入金額歴
-        /// </summary>
         private readonly List<Money.Money> _投入金額歴;
 
 
