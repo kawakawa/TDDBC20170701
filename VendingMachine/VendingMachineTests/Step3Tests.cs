@@ -39,7 +39,7 @@ namespace VendingMachineTests
 
 
         [TestMethod]
-        public void コーラの在庫がある状態で100円投入して購入可能状態となるか()
+        public void _100円コーラの在庫がある状態で100円投入して購入可能状態となるか()
         {
 
             //ラックにcoke格納
@@ -56,7 +56,7 @@ namespace VendingMachineTests
 
 
         [TestMethod]
-        public void コーラの在庫がある状態で10円投入して購入不可状態となるか()
+        public void _100円コーラの在庫がある状態で10円投入して購入不可状態となるか()
         {
             //ラックにcoke格納
             _itemラック.SetItem(_coke);
@@ -70,7 +70,7 @@ namespace VendingMachineTests
         }
 
         [TestMethod]
-        public void コーラの在庫がない状態で100円投入して購入不可状態となるか()
+        public void _100円コーラの在庫がない状態で100円投入して購入不可状態となるか()
         {
 
             //お金投入
