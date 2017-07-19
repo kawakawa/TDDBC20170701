@@ -285,5 +285,23 @@ namespace VendingMachineTests
             var 格納アイテムリスト = _itemラック.Get格納アイテムリスト();
             格納アイテムリスト.Count().Is(0);
         }
+
+
+        [TestMethod]
+        public void _100円コーラの在庫が2本の状態で1本購入すると在庫が1本になるか()
+        {
+
+            //ラックにcoke格納
+            _itemラック.Setアイテム(_coke);
+            _itemラック.Setアイテム(_coke);
+
+            //購入１
+            _投入口.投入(MoneyKind.Yen100);
+            スイッチ.購入(_coke.Name);
+
+            //在庫
+            var 格納アイテムリスト = _itemラック.Get格納アイテムリスト();
+            格納アイテムリスト.Count().Is(1);
+        }
     }
 }
