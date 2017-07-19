@@ -40,7 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="部位\Itemラック.cs" />
+    <Compile Include="部位\アイテムRack.cs" />
     <Compile Include="Rules\アイテム購入可否判定.cs" />
     <Compile Include="Rules\取扱対象硬貨紙幣.cs" />
     <Compile Include="部位\スイッチ.cs" />

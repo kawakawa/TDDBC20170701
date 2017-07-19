@@ -8,7 +8,7 @@ namespace VendingMachine.処理
         {
 
             //アイテム在庫整理
-            var 購入アイテム=Itemラック.ItemラックFactory()
+            var 購入アイテム=アイテムRack.ItemラックFactory()
                                       .アイテム取出し(購入対象アイテム);
             
             //購入アイテムを受取口にセット

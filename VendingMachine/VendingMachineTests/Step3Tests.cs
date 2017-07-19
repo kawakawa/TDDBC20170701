@@ -10,7 +10,7 @@ namespace VendingMachineTests
     public class Step3Tests
     {
 
-        private Itemラック _itemラック;
+        private アイテムRack _アイテムRack;
         private 投入金 _投入金;
         private 投入口 _投入口;
         private 売上金 _売上金;
@@ -22,8 +22,8 @@ namespace VendingMachineTests
         {
             _coke= MakeCokeDrink();
 
-            _itemラック = Itemラック.ItemラックFactory();
-            _itemラック.格納アイテム初期化();
+            _アイテムRack = アイテムRack.ItemラックFactory();
+            _アイテムRack.格納アイテム初期化();
 
             _投入金= 投入金.投入金額Factory();
             _投入金.投入金額歴初期化();
@@ -47,7 +47,7 @@ namespace VendingMachineTests
         {
 
             //ラックにcoke格納
-            _itemラック.Setアイテム(_coke);
+            _アイテムRack.Setアイテム(_coke);
 
             //お金投入
             _投入口.投入(MoneyKind.Yen100);
@@ -64,7 +64,7 @@ namespace VendingMachineTests
         public void _100円コーラの在庫がある状態で10円投入して購入不可状態となるか()
         {
             //ラックにcoke格納
-            _itemラック.Setアイテム(_coke);
+            _アイテムRack.Setアイテム(_coke);
 
             //お金投入
             _投入口.投入(MoneyKind.Yen10);
@@ -95,7 +95,7 @@ namespace VendingMachineTests
         {
 
             //ラックにcoke格納
-            _itemラック.Setアイテム(_coke);
+            _アイテムRack.Setアイテム(_coke);
 
             //お金投入
             _投入口.投入(MoneyKind.Yen100);
@@ -119,7 +119,7 @@ namespace VendingMachineTests
         {
 
             //ラックにcoke格納
-            _itemラック.Setアイテム(_coke);
+            _アイテムRack.Setアイテム(_coke);
 
             //お金投入
             _投入口.投入(MoneyKind.Yen10);
@@ -159,7 +159,7 @@ namespace VendingMachineTests
         {
 
             //ラックにcoke格納
-            _itemラック.Setアイテム(_coke);
+            _アイテムRack.Setアイテム(_coke);
 
             //お金投入
             _投入口.投入(MoneyKind.Yen100);
@@ -184,7 +184,7 @@ namespace VendingMachineTests
         {
 
             //ラックにcoke格納
-            _itemラック.Setアイテム(_coke);
+            _アイテムRack.Setアイテム(_coke);
 
             //お金投入
             _投入口.投入(MoneyKind.Yen100);
@@ -209,7 +209,7 @@ namespace VendingMachineTests
         {
 
             //ラックにcoke格納
-            _itemラック.Setアイテム(_coke);
+            _アイテムRack.Setアイテム(_coke);
 
             //お金投入
             _投入口.投入(MoneyKind.Yen100);
@@ -238,7 +238,7 @@ namespace VendingMachineTests
         public void _100円コーラの在庫がある状態で1本購入して売上金額が100円となるか()
         {
             //ラックにcoke格納
-            _itemラック.Setアイテム(_coke);
+            _アイテムRack.Setアイテム(_coke);
             
             //購入
             _投入口.投入(MoneyKind.Yen100);
@@ -255,8 +255,8 @@ namespace VendingMachineTests
         {
 
             //ラックにcoke格納
-            _itemラック.Setアイテム(_coke);
-            _itemラック.Setアイテム(_coke);
+            _アイテムRack.Setアイテム(_coke);
+            _アイテムRack.Setアイテム(_coke);
 
             //購入１
             _投入口.投入(MoneyKind.Yen100);
@@ -276,14 +276,14 @@ namespace VendingMachineTests
         {
 
             //ラックにcoke格納
-            _itemラック.Setアイテム(_coke);
+            _アイテムRack.Setアイテム(_coke);
 
             //購入１
             _投入口.投入(MoneyKind.Yen100);
             スイッチ.購入(_coke.Name);
 
             //在庫
-            var 格納アイテムリスト = _itemラック.Get格納アイテムリスト();
+            var 格納アイテムリスト = _アイテムRack.Get格納アイテムリスト();
             格納アイテムリスト.Count().Is(0);
         }
 
@@ -293,15 +293,15 @@ namespace VendingMachineTests
         {
 
             //ラックにcoke格納
-            _itemラック.Setアイテム(_coke);
-            _itemラック.Setアイテム(_coke);
+            _アイテムRack.Setアイテム(_coke);
+            _アイテムRack.Setアイテム(_coke);
 
             //購入１
             _投入口.投入(MoneyKind.Yen100);
             スイッチ.購入(_coke.Name);
 
             //在庫
-            var 格納アイテムリスト = _itemラック.Get格納アイテムリスト();
+            var 格納アイテムリスト = _アイテムRack.Get格納アイテムリスト();
             格納アイテムリスト.Count().Is(1);
         }
     }

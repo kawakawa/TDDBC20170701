@@ -10,14 +10,14 @@ namespace VendingMachineTests
     public class Step2Tests
     {
 
-        private Itemラック _itemラック;
+        private アイテムRack _アイテムRack;
 
 
         [TestInitialize]
         public void TestInitialize()
         {
-            _itemラック = Itemラック.ItemラックFactory();
-            _itemラック.格納アイテム初期化();
+            _アイテムRack = アイテムRack.ItemラックFactory();
+            _アイテムRack.格納アイテム初期化();
         }
 
         public static Item.Item MakeCokeDrink()
@@ -34,9 +34,9 @@ namespace VendingMachineTests
             var coke = MakeCokeDrink();
 
             //ラックに格納
-            _itemラック.Setアイテム(coke);
+            _アイテムRack.Setアイテム(coke);
 
-            var 格納アイテムリスト = _itemラック.Get格納アイテムリスト();
+            var 格納アイテムリスト = _アイテムRack.Get格納アイテムリスト();
             格納アイテムリスト.Count().Is(1);
             格納アイテムリスト.First().Name.Is(coke.Name);
             格納アイテムリスト.First().Price.Is(coke.Price);
@@ -50,9 +50,9 @@ namespace VendingMachineTests
             var coke = MakeCokeDrink();
             
             Enumerable.Range(1, 5).ToList()
-                .ForEach(i => _itemラック.Setアイテム(coke));
+                .ForEach(i => _アイテムRack.Setアイテム(coke));
 
-            var 格納アイテムリスト = _itemラック.Get格納アイテムリスト();
+            var 格納アイテムリスト = _アイテムRack.Get格納アイテムリスト();
             格納アイテムリスト.Count().Is(5);
             格納アイテムリスト.All(n => n.Name == coke.Name).IsTrue();
             格納アイテムリスト.All(n => n.Price == coke.Price).IsTrue();

@@ -3,22 +3,22 @@ using System.Linq;
 
 namespace VendingMachine.部位
 {
-    public class Itemラック
+    public class アイテムRack
     {
 
-        private static Itemラック _itemラック;
+        private static アイテムRack _アイテムRack;
 
         private readonly List<Item.Item> _格納アイテムリスト;
 
-        private Itemラック()
+        private アイテムRack()
         {
             //初期化
             _格納アイテムリスト=new List<Item.Item>();
         }
 
-        public static Itemラック ItemラックFactory()
+        public static アイテムRack ItemラックFactory()
         {
-            return _itemラック ?? (_itemラック=new Itemラック());
+            return _アイテムRack ?? (_アイテムRack=new アイテムRack());
         }
 
 
