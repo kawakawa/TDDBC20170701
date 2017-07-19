@@ -16,7 +16,7 @@ namespace VendingMachine.処理
                 .Setアイテム(購入アイテム);
             
             //売上計上
-            売上金額管理.売上金額管理Factory()
+            売上金.売上金額管理Factory()
                 .Add売上金(購入アイテム.Price);
 
             //投入金額計算

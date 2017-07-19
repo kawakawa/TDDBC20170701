@@ -46,7 +46,7 @@
     <Compile Include="部位\スイッチ.cs" />
     <Compile Include="取扱外金.cs" />
     <Compile Include="部位\アイテム受取口.cs" />
-    <Compile Include="売上金額管理.cs" />
+    <Compile Include="売上金.cs" />
     <Compile Include="部位\投入口.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="投入金.cs" />

@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace VendingMachine
 {
-    public class 売上金額管理
+    public class 売上金
     {
-        private static 売上金額管理 _売上金額管理;
+        private static 売上金 _売上金;
 
         private int _売上金額;
 
-        private 売上金額管理()
+        private 売上金()
         {
         }
 
@@ -22,9 +22,9 @@ namespace VendingMachine
         }
 
 
-        public static 売上金額管理 売上金額管理Factory()
+        public static 売上金 売上金額管理Factory()
         {
-            return _売上金額管理 ?? (_売上金額管理 = new 売上金額管理());
+            return _売上金 ?? (_売上金 = new 売上金());
         }
 
         public int GetTotal売上金額()
