@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace VendingMachine
+namespace VendingMachine.部位
 {
     public class Itemラック
     {

@@ -2,6 +2,7 @@
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using VendingMachine;
+using VendingMachine.部位;
 
 namespace VendingMachineTests
 {
