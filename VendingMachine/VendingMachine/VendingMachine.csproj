@@ -50,7 +50,7 @@
     <Compile Include="部位\投入口.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="投入金額管理.cs" />
-    <Compile Include="機能\購入.cs" />
+    <Compile Include="処理\購入.cs" />
     <Compile Include="釣銭.cs" />
     <Compile Include="部位\釣銭口.cs" />
   </ItemGroup>

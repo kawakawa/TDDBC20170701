@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using VendingMachine.部位;
+﻿using VendingMachine.部位;
 
-namespace VendingMachine.機能
+namespace VendingMachine.処理
 {
     public static class 購入
     {
