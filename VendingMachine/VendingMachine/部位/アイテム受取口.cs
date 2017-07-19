@@ -1,5 +1,5 @@
 ﻿
-namespace VendingMachine
+namespace VendingMachine.部位
 {
     public class アイテム受取口
     {
