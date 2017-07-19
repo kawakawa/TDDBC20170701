@@ -26,7 +26,7 @@ namespace VendingMachine.部位
 
         public void 投入(Money.Money 投入金)
         {
-            if (取扱硬貨.Is取扱対象硬貨(投入金)==false)
+            if (取扱対象硬貨紙幣.Is取扱対象硬貨(投入金)==false)
             {
                 _釣銭口.Add取扱外金(投入金);
                 return;

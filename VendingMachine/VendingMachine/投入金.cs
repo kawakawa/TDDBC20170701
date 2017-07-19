@@ -71,7 +71,7 @@ namespace VendingMachine
                 while (差額値>0)
                 {
                     var 取扱対象金 = MoneyKind.GetList()
-                        .Where(取扱硬貨.Is取扱対象硬貨)
+                        .Where(取扱対象硬貨紙幣.Is取扱対象硬貨)
                         .OrderByDescending(n=>n.Value)
                         .Select(n=>n);
 

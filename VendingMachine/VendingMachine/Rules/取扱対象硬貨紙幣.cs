@@ -1,6 +1,6 @@
 ﻿namespace VendingMachine.Rules
 {
-    public static class 取扱硬貨
+    public static class 取扱対象硬貨紙幣
     {
         /// <summary>
         /// 自販機取扱硬貨の判定
