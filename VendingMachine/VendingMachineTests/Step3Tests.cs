@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using System.Linq;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Money;
 using VendingMachine;
 
@@ -267,6 +268,22 @@ namespace VendingMachineTests
             //売上金
             _売上金額管理.GetTotal売上金額()
                         .Is(_coke.Price*2);
+        }
+
+        [TestMethod]
+        public void _100円コーラの在庫が1本の状態で1本購入すると在庫が0本になるか()
+        {
+
+            //ラックにcoke格納
+            _itemラック.Setアイテム(_coke);
+
+            //購入１
+            _投入口.投入(MoneyKind.Yen100);
+            スイッチ.購入(_coke.Name);
+
+            //在庫
+            var 格納アイテムリスト = _itemラック.Get格納アイテムリスト();
+            格納アイテムリスト.Count().Is(0);
         }
     }
 }

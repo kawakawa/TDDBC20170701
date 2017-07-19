@@ -12,19 +12,20 @@ namespace VendingMachine.機能
         {
 
             //アイテム在庫整理
-            var item = Item.Items.Drink.Factory("コーラ", 100);
-
-
+            var 購入アイテム=Itemラック.ItemラックFactory()
+                                      .アイテム取出し(購入対象アイテム);
+            
+            //購入アイテムを受取口にセット
             アイテム受取口.アイテム受取口Factory()
-                .Setアイテム(item);
-
+                .Setアイテム(購入アイテム);
+            
             //売上計上
             売上金額管理.売上金額管理Factory()
-                .Add売上金(item.Price);
+                .Add売上金(購入アイテム.Price);
 
-            //投入金額整理
+            //投入金額計算
             投入金額管理.投入金額Factory()
-                .購入金額分減算(item.Price)
+                .購入金額分減算(購入アイテム.Price)
                 .払い戻し();
         }
     }

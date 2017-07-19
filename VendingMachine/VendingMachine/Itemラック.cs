@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace VendingMachine
 {
@@ -38,5 +39,12 @@ namespace VendingMachine
             _格納アイテムリスト.Clear();
         }
 
+        public Item.Item アイテム取出し(string 対象アイテム名)
+        {
+            var アイテム = _格納アイテムリスト.First(n => n.Name == 対象アイテム名);
+            _格納アイテムリスト.Remove(アイテム);
+
+            return アイテム;
+        }
     }
 }
