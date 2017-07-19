@@ -52,7 +52,7 @@
     <Compile Include="投入金額管理.cs" />
     <Compile Include="機能\購入.cs" />
     <Compile Include="釣銭.cs" />
-    <Compile Include="釣銭口.cs" />
+    <Compile Include="部位\釣銭口.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Item\Item.csproj">

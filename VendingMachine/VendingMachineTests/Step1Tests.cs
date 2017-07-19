@@ -3,6 +3,7 @@ using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Money;
 using VendingMachine;
+using VendingMachine.部位;
 
 namespace VendingMachineTests
 {

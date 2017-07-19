@@ -2,6 +2,7 @@
 using System.Linq;
 using Money;
 using VendingMachine.Rules;
+using VendingMachine.部位;
 
 namespace VendingMachine
 {

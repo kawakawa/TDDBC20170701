@@ -1,5 +1,6 @@
 ﻿using System;
 using VendingMachine.Rules;
+using VendingMachine.部位;
 
 namespace VendingMachine
 {

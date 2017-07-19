@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 
-
-namespace VendingMachine
+namespace VendingMachine.部位
 {
     public class 釣銭口
     {
