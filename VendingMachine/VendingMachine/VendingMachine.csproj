@@ -41,7 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Itemラック.cs" />
-    <Compile Include="Rules\アイテム購入.cs" />
+    <Compile Include="Rules\アイテム購入可否判定.cs" />
     <Compile Include="Rules\取扱硬貨.cs" />
     <Compile Include="スイッチ.cs" />
     <Compile Include="取扱外金.cs" />

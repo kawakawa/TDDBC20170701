@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace VendingMachine.Rules
 {
-    public static class アイテム購入
+    public static class アイテム購入可否判定
     {
         public static bool Is購入可(string 対象ItemName)
         {

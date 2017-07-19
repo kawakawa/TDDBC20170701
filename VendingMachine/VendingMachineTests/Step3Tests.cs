@@ -51,7 +51,7 @@ namespace VendingMachineTests
             _投入口.投入(MoneyKind.Yen100);
 
             //購入可否判定
-            VendingMachine.Rules.アイテム購入
+            VendingMachine.Rules.アイテム購入可否判定
                                 .Is購入可(_coke.Name)
                                 .IsTrue();
         }
@@ -68,7 +68,7 @@ namespace VendingMachineTests
             _投入口.投入(MoneyKind.Yen10);
 
             //購入可否判定
-            VendingMachine.Rules.アイテム購入
+            VendingMachine.Rules.アイテム購入可否判定
                 .Is購入可(_coke.Name)
                 .IsFalse();
         }
@@ -82,7 +82,7 @@ namespace VendingMachineTests
             //コーラ在庫は未セット
 
             //購入可否判定
-            VendingMachine.Rules.アイテム購入
+            VendingMachine.Rules.アイテム購入可否判定
                 .Is購入可(_coke.Name)
                 .IsFalse();
         }

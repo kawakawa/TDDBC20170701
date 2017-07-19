@@ -10,7 +10,7 @@ namespace VendingMachine
     {
         public static void 購入(string 購入希望アイテム名)
         {
-            var 購入可否 = VendingMachine.Rules.アイテム購入.Is購入可(購入希望アイテム名);
+            var 購入可否 = VendingMachine.Rules.アイテム購入可否判定.Is購入可(購入希望アイテム名);
 
             if(購入可否==false)
                 return;
