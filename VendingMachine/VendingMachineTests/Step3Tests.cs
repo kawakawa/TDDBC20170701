@@ -231,8 +231,9 @@ namespace VendingMachineTests
             _投入口.投入(MoneyKind.Yen100);
             スイッチ.購入(_coke.Name);
 
+            //売上金
             _売上金額管理.GetTotal売上金額()
-                .Is(_coke.Price);
+                        .Is(_coke.Price);
         }
 
 
@@ -244,16 +245,17 @@ namespace VendingMachineTests
             _itemラック.Setアイテム(_coke);
             _itemラック.Setアイテム(_coke);
 
-            //購入
+            //購入１
             _投入口.投入(MoneyKind.Yen100);
             スイッチ.購入(_coke.Name);
 
-            //購入
+            //購入２
             _投入口.投入(MoneyKind.Yen100);
             スイッチ.購入(_coke.Name);
 
+            //売上金
             _売上金額管理.GetTotal売上金額()
-                .Is(_coke.Price*2);
+                        .Is(_coke.Price*2);
         }
     }
 }
