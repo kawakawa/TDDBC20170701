@@ -11,7 +11,7 @@ namespace VendingMachineTests
     {
 
         private Itemラック _itemラック;
-        private 投入金額管理 _投入金額管理;
+        private 投入金 _投入金;
         private 投入口 _投入口;
         private 売上金額管理 _売上金額管理;
 
@@ -25,13 +25,13 @@ namespace VendingMachineTests
             _itemラック = Itemラック.ItemラックFactory();
             _itemラック.格納アイテム初期化();
 
-            _投入金額管理= 投入金額管理.投入金額Factory();
-            _投入金額管理.投入金額歴初期化();
+            _投入金= 投入金.投入金額Factory();
+            _投入金.投入金額歴初期化();
 
             _売上金額管理=売上金額管理.売上金額管理Factory();
             _売上金額管理.初期化();
 
-            _投入口= 投入口.投入口Factory(_投入金額管理);
+            _投入口= 投入口.投入口Factory(_投入金);
         }
 
         

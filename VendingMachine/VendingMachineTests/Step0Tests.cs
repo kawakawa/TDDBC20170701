@@ -10,15 +10,15 @@ namespace VendingMachineTests
     public class Step0Tests
     {
 
-        private 投入金額管理 _投入金額管理;
+        private 投入金 _投入金;
         private 投入口 _投入口;
 
         [TestInitialize]
         public void TestIniitialize()
         {
-            _投入金額管理 = 投入金額管理.投入金額Factory();
-            _投入金額管理.投入金額歴初期化();
-            _投入口 = 投入口.投入口Factory(_投入金額管理);
+            _投入金 = 投入金.投入金額Factory();
+            _投入金.投入金額歴初期化();
+            _投入口 = 投入口.投入口Factory(_投入金);
         }
 
 
@@ -27,35 +27,35 @@ namespace VendingMachineTests
         public void _10円玉を投入して投入金額合計が10円になる()
         {
             _投入口.投入(MoneyKind.Yen10);
-            _投入金額管理.Get合計金額().Is(10);
+            _投入金.Get合計金額().Is(10);
         }
 
         [TestMethod]
         public void _50円玉を投入して投入金額が50円になる()
         {
             _投入口.投入(MoneyKind.Yen50);
-            _投入金額管理.Get合計金額().Is(50);
+            _投入金.Get合計金額().Is(50);
         }
 
         [TestMethod]
         public void _100円玉を投入して投入金額が100円になる()
         {
             _投入口.投入(MoneyKind.Yen100);
-            _投入金額管理.Get合計金額().Is(100);
+            _投入金.Get合計金額().Is(100);
         }
 
         [TestMethod]
         public void _500円玉を投入して投入金額が500円になる()
         {
             _投入口.投入(MoneyKind.Yen500);
-            _投入金額管理.Get合計金額().Is(500);
+            _投入金.Get合計金額().Is(500);
         }
 
         [TestMethod]
         public void _1000円札を投入して投入金額が1000円になる()
         {
             _投入口.投入(MoneyKind.Yen1000);
-            _投入金額管理.Get合計金額().Is(1000);
+            _投入金.Get合計金額().Is(1000);
         }
 
         [TestMethod]
@@ -64,7 +64,7 @@ namespace VendingMachineTests
             Enumerable.Range(1, 5).ToList()
                 .ForEach(i => _投入口.投入(MoneyKind.Yen10));
 
-            _投入金額管理.Get合計金額().Is(50);
+            _投入金.Get合計金額().Is(50);
         }
 
         [TestMethod]
@@ -74,7 +74,7 @@ namespace VendingMachineTests
             Enumerable.Range(1, 2).ToList()
                 .ForEach(i => _投入口.投入(MoneyKind.Yen50));
 
-            _投入金額管理.Get合計金額().Is(100);
+            _投入金.Get合計金額().Is(100);
         }
 
 
@@ -85,7 +85,7 @@ namespace VendingMachineTests
             Enumerable.Range(1, 5).ToList()
                 .ForEach(i => _投入口.投入(MoneyKind.Yen100));
 
-            _投入金額管理.Get合計金額().Is(500);
+            _投入金.Get合計金額().Is(500);
         }
 
 
@@ -95,7 +95,7 @@ namespace VendingMachineTests
             Enumerable.Range(1, 2).ToList()
                 .ForEach(i => _投入口.投入(MoneyKind.Yen500));
 
-            _投入金額管理.Get合計金額().Is(1000);
+            _投入金.Get合計金額().Is(1000);
         }
 
 
@@ -105,7 +105,7 @@ namespace VendingMachineTests
         {
             _投入口.投入(MoneyKind.Yen10);
 
-            _投入金額管理.払い戻し();
+            _投入金.払い戻し();
 
             釣銭口.釣銭口Factory()
                  .Get釣銭()
@@ -118,7 +118,7 @@ namespace VendingMachineTests
         {
             _投入口.投入(MoneyKind.Yen50);
 
-            _投入金額管理.払い戻し();
+            _投入金.払い戻し();
             釣銭口.釣銭口Factory()
                 .Get釣銭()
                 .Get合計金額().Is(50);
@@ -130,7 +130,7 @@ namespace VendingMachineTests
             Enumerable.Range(1, 5).ToList()
                 .ForEach(i => _投入口.投入(MoneyKind.Yen10));
 
-            _投入金額管理.払い戻し();
+            _投入金.払い戻し();
             釣銭口.釣銭口Factory()
                 .Get釣銭()
                 .Get合計金額().Is(50);

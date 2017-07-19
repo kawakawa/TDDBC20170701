@@ -6,24 +6,24 @@ using VendingMachine.部位;
 
 namespace VendingMachine
 {
-    public class 投入金額管理
+    public class 投入金
     {
 
-        private static 投入金額管理 _投入金額管理;
+        private static 投入金 _投入金;
 
         private readonly List<Money.Money> _投入金額歴;
 
 
-        private 投入金額管理()
+        private 投入金()
         {
             _投入金額歴=new List<Money.Money>();
         }
 
 
 
-        public static 投入金額管理 投入金額Factory()
+        public static 投入金 投入金額Factory()
         {
-            return _投入金額管理 ?? (_投入金額管理 = new 投入金額管理());
+            return _投入金 ?? (_投入金 = new 投入金());
         }
 
 
@@ -55,7 +55,7 @@ namespace VendingMachine
         }
 
 
-        public 投入金額管理 購入金額分減算(int 購入金額)
+        public 投入金 購入金額分減算(int 購入金額)
         {
             
 
@@ -71,7 +71,7 @@ namespace VendingMachine
                 while (差額値>0)
                 {
                     var 取扱対象金 = MoneyKind.GetList()
-                        .Where(n => 取扱硬貨.Is取扱対象硬貨(n) == true)
+                        .Where(取扱硬貨.Is取扱対象硬貨)
                         .OrderByDescending(n=>n.Value)
                         .Select(n=>n);
 
