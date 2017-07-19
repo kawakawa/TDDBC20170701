@@ -50,6 +50,7 @@ namespace VendingMachineTests
             //お金投入
             _投入口.投入(MoneyKind.Yen100);
 
+            //購入可否判定
             VendingMachine.Rules.アイテム購入
                                 .Is購入可(_coke.Name)
                                 .IsTrue();
@@ -66,6 +67,7 @@ namespace VendingMachineTests
             //お金投入
             _投入口.投入(MoneyKind.Yen10);
 
+            //購入可否判定
             VendingMachine.Rules.アイテム購入
                 .Is購入可(_coke.Name)
                 .IsFalse();
@@ -79,6 +81,7 @@ namespace VendingMachineTests
 
             //コーラ在庫は未セット
 
+            //購入可否判定
             VendingMachine.Rules.アイテム購入
                 .Is購入可(_coke.Name)
                 .IsFalse();
@@ -95,13 +98,15 @@ namespace VendingMachineTests
             //お金投入
             _投入口.投入(MoneyKind.Yen100);
 
-
+            //購入
             スイッチ.購入(_coke.Name);
 
+            //アイテム受取
             アイテム受取口
                 .アイテム受取口Factory()
                 .Getアイテム().Name.Is(_coke.Name);
 
+            //お釣り
             釣銭口.釣銭口Factory()
                 .Get釣銭()
                 .Get合計金額().Is(0);
@@ -117,10 +122,10 @@ namespace VendingMachineTests
             //お金投入
             _投入口.投入(MoneyKind.Yen10);
 
-
+            //購入
             スイッチ.購入(_coke.Name);
 
-
+            //アイテム受取
             アイテム受取口
                 .アイテム受取口Factory()
                 .Getアイテム()
@@ -137,10 +142,10 @@ namespace VendingMachineTests
             //お金投入
             _投入口.投入(MoneyKind.Yen100);
 
-
+            //購入
             スイッチ.購入(_coke.Name);
 
-
+            //アイテム受取
             アイテム受取口
                 .アイテム受取口Factory()
                 .Getアイテム().IsNull();
@@ -158,13 +163,15 @@ namespace VendingMachineTests
             _投入口.投入(MoneyKind.Yen100);
             _投入口.投入(MoneyKind.Yen10);
 
-
+            //購入
             スイッチ.購入(_coke.Name);
 
+            //アイテム受取
             アイテム受取口
                 .アイテム受取口Factory()
                 .Getアイテム().Name.Is(_coke.Name);
 
+            //お釣り
             釣銭口.釣銭口Factory()
                 .Get釣銭()
                 .Get合計金額().Is(10);
@@ -181,13 +188,15 @@ namespace VendingMachineTests
             _投入口.投入(MoneyKind.Yen100);
             _投入口.投入(MoneyKind.Yen100);
 
-
+            //購入
             スイッチ.購入(_coke.Name);
 
+            //アイテム受取
             アイテム受取口
                 .アイテム受取口Factory()
                 .Getアイテム().Name.Is(_coke.Name);
 
+            //お釣り
             釣銭口.釣銭口Factory()
                 .Get釣銭()
                 .Get合計金額().Is(100);
@@ -207,13 +216,15 @@ namespace VendingMachineTests
             _投入口.投入(MoneyKind.Yen10);
             _投入口.投入(MoneyKind.Yen10);
 
-
+            //購入
             スイッチ.購入(_coke.Name);
 
+            //アイテム受取
             アイテム受取口
                 .アイテム受取口Factory()
                 .Getアイテム().Name.Is(_coke.Name);
 
+            //お釣り
             釣銭口.釣銭口Factory()
                 .Get釣銭()
                 .Get合計金額().Is(80);
