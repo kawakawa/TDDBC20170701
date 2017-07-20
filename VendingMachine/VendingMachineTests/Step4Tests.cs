@@ -30,6 +30,10 @@ namespace VendingMachineTests
             return Item.Items.Drink.Factory("レッドブル", 200);
         }
 
+        public static Item.Item MakeWaterDrink()
+        {
+            return Item.Items.Drink.Factory("水", 100);
+        }
 
 
 
@@ -46,6 +50,23 @@ namespace VendingMachineTests
             格納アイテムリスト.Count().Is(1);
             格納アイテムリスト.First().Name.Is(redBull.Name);
             格納アイテムリスト.First().Price.Is(redBull.Price);
+        }
+
+
+
+        [TestMethod]
+        public void 水１本を在庫として格納できる()
+        {
+            //水
+            var water = MakeWaterDrink();
+
+            //ラックに格納
+            _アイテムRack.Setアイテム(water);
+
+            var 格納アイテムリスト = _アイテムRack.Get格納アイテムリスト();
+            格納アイテムリスト.Count().Is(1);
+            格納アイテムリスト.First().Name.Is(water.Name);
+            格納アイテムリスト.First().Price.Is(water.Price);
         }
     }
 }
