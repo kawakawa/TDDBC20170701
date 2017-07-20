@@ -16,7 +16,7 @@ namespace VendingMachineTests
         [TestInitialize]
         public void TestInitialize()
         {
-            _アイテムRack = アイテムRack.ItemラックFactory();
+            _アイテムRack = アイテムRack.Factory();
             _アイテムRack.格納アイテム初期化();
         }
 

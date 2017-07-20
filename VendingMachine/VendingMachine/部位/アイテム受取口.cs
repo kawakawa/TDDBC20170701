@@ -14,7 +14,7 @@ namespace VendingMachine.部位
         }
         
 
-        public static アイテム受取口 アイテム受取口Factory()
+        public static アイテム受取口 Factory()
         {
             return _アイテム受取口 ?? (_アイテム受取口 = new アイテム受取口());
         }

@@ -14,11 +14,11 @@ namespace VendingMachine.部位
         {
             _投入金 = 投入金 ?? throw new ArgumentNullException(nameof(投入金));
 
-            _釣銭口 = 釣銭口.釣銭口Factory();
+            _釣銭口 = 釣銭口.Factory();
         }
 
 
-        public static 投入口 投入口Factory(投入金 投入金)
+        public static 投入口 Factory(投入金 投入金)
         {
             return _投入口 ?? (_投入口 = new 投入口(投入金));
         }

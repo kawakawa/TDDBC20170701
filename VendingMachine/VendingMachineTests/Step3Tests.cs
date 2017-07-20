@@ -22,7 +22,7 @@ namespace VendingMachineTests
         {
             _coke= MakeCokeDrink();
 
-            _アイテムRack = アイテムRack.ItemラックFactory();
+            _アイテムRack = アイテムRack.Factory();
             _アイテムRack.格納アイテム初期化();
 
             _投入金= 投入金.投入金額Factory();
@@ -31,7 +31,7 @@ namespace VendingMachineTests
             _売上金=売上金.売上金額管理Factory();
             _売上金.初期化();
 
-            _投入口= 投入口.投入口Factory(_投入金);
+            _投入口= 投入口.Factory(_投入金);
         }
 
         
@@ -105,11 +105,11 @@ namespace VendingMachineTests
 
             //アイテム受取
             アイテム受取口
-                .アイテム受取口Factory()
+                .Factory()
                 .Getアイテム().Name.Is(_coke.Name);
 
             //お釣り
-            釣銭口.釣銭口Factory()
+            釣銭口.Factory()
                 .Get釣銭()
                 .Get合計金額().Is(0);
         }
@@ -129,7 +129,7 @@ namespace VendingMachineTests
 
             //アイテム受取
             アイテム受取口
-                .アイテム受取口Factory()
+                .Factory()
                 .Getアイテム()
                 .IsNull();
 
@@ -149,7 +149,7 @@ namespace VendingMachineTests
 
             //アイテム受取
             アイテム受取口
-                .アイテム受取口Factory()
+                .Factory()
                 .Getアイテム().IsNull();
 
         }
@@ -170,11 +170,11 @@ namespace VendingMachineTests
 
             //アイテム受取
             アイテム受取口
-                .アイテム受取口Factory()
+                .Factory()
                 .Getアイテム().Name.Is(_coke.Name);
 
             //お釣り
-            釣銭口.釣銭口Factory()
+            釣銭口.Factory()
                 .Get釣銭()
                 .Get合計金額().Is(10);
         }
@@ -195,11 +195,11 @@ namespace VendingMachineTests
 
             //アイテム受取
             アイテム受取口
-                .アイテム受取口Factory()
+                .Factory()
                 .Getアイテム().Name.Is(_coke.Name);
 
             //お釣り
-            釣銭口.釣銭口Factory()
+            釣銭口.Factory()
                 .Get釣銭()
                 .Get合計金額().Is(100);
         }
@@ -223,11 +223,11 @@ namespace VendingMachineTests
 
             //アイテム受取
             アイテム受取口
-                .アイテム受取口Factory()
+                .Factory()
                 .Getアイテム().Name.Is(_coke.Name);
 
             //お釣り
-            釣銭口.釣銭口Factory()
+            釣銭口.Factory()
                 .Get釣銭()
                 .Get合計金額().Is(80);
         }

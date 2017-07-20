@@ -18,7 +18,7 @@ namespace VendingMachine.部位
         }
 
 
-        public static 釣銭口 釣銭口Factory()
+        public static 釣銭口 Factory()
         {
             return _釣銭口?? (_釣銭口 = new 釣銭口());
         }

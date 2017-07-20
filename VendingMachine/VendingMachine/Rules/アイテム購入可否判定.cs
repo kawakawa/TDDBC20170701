@@ -11,7 +11,7 @@ namespace VendingMachine.Rules
     {
         public static bool Is購入可(string 対象ItemName)
         {
-            var itemラック = アイテムRack.ItemラックFactory();
+            var itemラック = アイテムRack.Factory();
 
             //在庫なし=>購入不可
             if (itemラック.Get格納アイテムリスト().All(n => n.Name != 対象ItemName))

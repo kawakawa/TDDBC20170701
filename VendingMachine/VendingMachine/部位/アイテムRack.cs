@@ -16,7 +16,7 @@ namespace VendingMachine.部位
             _格納アイテムリスト=new List<Item.Item>();
         }
 
-        public static アイテムRack ItemラックFactory()
+        public static アイテムRack Factory()
         {
             return _アイテムRack ?? (_アイテムRack=new アイテムRack());
         }

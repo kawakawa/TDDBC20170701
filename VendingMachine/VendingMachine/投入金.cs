@@ -42,7 +42,7 @@ namespace VendingMachine
         public void 払い戻し()
         {
             //釣銭口に釣銭セット
-            釣銭口.釣銭口Factory()
+            釣銭口.Factory()
                   .Set釣銭(_投入金額歴);
 
             投入金額歴初期化();
