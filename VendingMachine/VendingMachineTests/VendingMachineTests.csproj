@@ -55,6 +55,7 @@
     <Compile Include="Step1Tests.cs" />
     <Compile Include="Step2Tests.cs" />
     <Compile Include="Step3Tests.cs" />
+    <Compile Include="Step4Tests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
