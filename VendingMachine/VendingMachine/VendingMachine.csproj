@@ -43,7 +43,7 @@
     <Compile Include="部位\アイテムRack.cs" />
     <Compile Include="Rules\アイテム購入可否判定.cs" />
     <Compile Include="Rules\取扱対象硬貨紙幣.cs" />
-    <Compile Include="部位\スイッチ.cs" />
+    <Compile Include="部位\操作パネル.cs" />
     <Compile Include="取扱外金.cs" />
     <Compile Include="部位\アイテム受取口.cs" />
     <Compile Include="売上金.cs" />

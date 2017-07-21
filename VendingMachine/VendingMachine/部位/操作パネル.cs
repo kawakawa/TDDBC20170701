@@ -3,7 +3,7 @@ using Item.Items;
 
 namespace VendingMachine.部位
 {
-    public class スイッチ
+    public class 操作パネル
     {
         public static void 購入(string 購入希望アイテム名)
         {

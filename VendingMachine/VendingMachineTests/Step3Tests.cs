@@ -95,7 +95,7 @@ namespace VendingMachineTests
             _投入口.投入(MoneyKind.Yen100);
 
             //購入
-            スイッチ.購入(_coke.Name);
+            操作パネル.購入(_coke.Name);
 
             //アイテム受取
             アイテム受取口
@@ -119,7 +119,7 @@ namespace VendingMachineTests
             _投入口.投入(MoneyKind.Yen10);
 
             //購入
-            スイッチ.購入(_coke.Name);
+            操作パネル.購入(_coke.Name);
 
             //アイテム受取
             アイテム受取口
@@ -139,7 +139,7 @@ namespace VendingMachineTests
             _投入口.投入(MoneyKind.Yen100);
 
             //購入
-            スイッチ.購入(_coke.Name);
+            操作パネル.購入(_coke.Name);
 
             //アイテム受取
             アイテム受取口
@@ -160,7 +160,7 @@ namespace VendingMachineTests
             _投入口.投入(MoneyKind.Yen10);
 
             //購入
-            スイッチ.購入(_coke.Name);
+            操作パネル.購入(_coke.Name);
 
             //アイテム受取
             アイテム受取口
@@ -185,7 +185,7 @@ namespace VendingMachineTests
             _投入口.投入(MoneyKind.Yen100);
 
             //購入
-            スイッチ.購入(_coke.Name);
+            操作パネル.購入(_coke.Name);
 
             //アイテム受取
             アイテム受取口
@@ -213,7 +213,7 @@ namespace VendingMachineTests
             _投入口.投入(MoneyKind.Yen10);
 
             //購入
-            スイッチ.購入(_coke.Name);
+            操作パネル.購入(_coke.Name);
 
             //アイテム受取
             アイテム受取口
@@ -236,7 +236,7 @@ namespace VendingMachineTests
             
             //購入
             _投入口.投入(MoneyKind.Yen100);
-            スイッチ.購入(_coke.Name);
+            操作パネル.購入(_coke.Name);
 
             //売上金
             _売上金.GetTotal売上金額()
@@ -254,11 +254,11 @@ namespace VendingMachineTests
 
             //購入１
             _投入口.投入(MoneyKind.Yen100);
-            スイッチ.購入(_coke.Name);
+            操作パネル.購入(_coke.Name);
 
             //購入２
             _投入口.投入(MoneyKind.Yen100);
-            スイッチ.購入(_coke.Name);
+            操作パネル.購入(_coke.Name);
 
             //売上金
             _売上金.GetTotal売上金額()
@@ -274,7 +274,7 @@ namespace VendingMachineTests
 
             //購入１
             _投入口.投入(MoneyKind.Yen100);
-            スイッチ.購入(_coke.Name);
+            操作パネル.購入(_coke.Name);
 
             //在庫
             var 格納アイテムリスト = _アイテムRack.Get格納アイテムリスト();
@@ -292,7 +292,7 @@ namespace VendingMachineTests
 
             //購入１
             _投入口.投入(MoneyKind.Yen100);
-            スイッチ.購入(_coke.Name);
+            操作パネル.購入(_coke.Name);
 
             //在庫
             var 格納アイテムリスト = _アイテムRack.Get格納アイテムリスト();

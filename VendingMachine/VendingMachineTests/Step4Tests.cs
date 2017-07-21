@@ -109,7 +109,7 @@ namespace VendingMachineTests
 
 
 
-            var 購入可能アイテムリスト = スイッチ.Get購入可能アイテムリスト();
+            var 購入可能アイテムリスト = 操作パネル.Get購入可能アイテムリスト();
 
             購入可能アイテムリスト.Count().Is(2);
             購入可能アイテムリスト.Any(n => n.Name == coke.Name).IsTrue();
