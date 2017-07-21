@@ -15,6 +15,8 @@ namespace VendingMachineTests
         private 投入金 _投入金;
         private 投入口 _投入口;
 
+        private 売上金 _売上金;
+
         private Item.Item _coke;
         private Item.Item _redbull;
         private Item.Item _water;
@@ -31,6 +33,8 @@ namespace VendingMachineTests
 
             _投入口 = 投入口.Factory(_投入金);
 
+            _売上金 = 売上金.Factory();
+            _売上金.初期化();
 
             //Cokeを5本ラック格納
             _coke = Util.MakeCokeDrink();
@@ -69,6 +73,9 @@ namespace VendingMachineTests
 
             var 格納アイテムリスト = _アイテムRack.Get格納アイテムリスト();
             格納アイテムリスト.Count(n => n.Name==_coke.Name).Is(4);
+
+
+            _売上金.GetTotal売上金額().Is(100);
         }
 
 
@@ -90,6 +97,9 @@ namespace VendingMachineTests
 
             var 格納アイテムリスト = _アイテムRack.Get格納アイテムリスト();
             格納アイテムリスト.Count(n => n.Name == _coke.Name).Is(4);
+
+
+            _売上金.GetTotal売上金額().Is(100);
         }
 
 
@@ -121,6 +131,9 @@ namespace VendingMachineTests
 
             var 格納アイテムリスト = _アイテムRack.Get格納アイテムリスト();
             格納アイテムリスト.Count(n => n.Name == _coke.Name).Is(0);
+
+
+            _売上金.GetTotal売上金額().Is(500);
         }
 
 
@@ -155,6 +168,8 @@ namespace VendingMachineTests
 
             var 格納アイテムリスト = _アイテムRack.Get格納アイテムリスト();
             格納アイテムリスト.Count(n => n.Name == _coke.Name).Is(0);
+
+            _売上金.GetTotal売上金額().Is(500);
         }
 
 
