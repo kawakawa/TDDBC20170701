@@ -65,5 +65,29 @@ namespace VendingMachineTests
             格納アイテムリスト.First().Name.Is(water.Name);
             格納アイテムリスト.First().Price.Is(water.Price);
         }
+
+
+        [TestMethod]
+        public void 水5本を在庫として格納できる()
+        {
+            //水
+            var water = Util.MakeWaterDrink();
+
+            //ラックに格納
+            Enumerable.Range(1, 5).ToList()
+                .ForEach(i => _アイテムRack.Setアイテム(water));
+
+            var 格納アイテムリスト = _アイテムRack.Get格納アイテムリスト();
+            格納アイテムリスト.Count().Is(5);
+            格納アイテムリスト.First().Name.Is(water.Name);
+            格納アイテムリスト.First().Price.Is(water.Price);
+        }
+
+
+
+
+
+
+
     }
 }
