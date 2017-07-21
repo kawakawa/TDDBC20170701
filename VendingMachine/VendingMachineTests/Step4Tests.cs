@@ -143,6 +143,26 @@ namespace VendingMachineTests
 
 
 
+        [TestMethod]
+        public void コーラ_レッドブルだけを格納した状態で100円投下した時購入可能なのはコーラだけであるか()
+        {
+
+            var coke = Util.MakeCokeDrink();
+            var redbull = Util.MakeRedBullDrink();
+
+            _アイテムRack.Setアイテム(coke);
+            _アイテムRack.Setアイテム(redbull);
+
+            _投入口.投入(MoneyKind.Yen100);
+
+            var 購入可能アイテムリスト = 操作パネル.Get購入可能アイテムリスト();
+
+            購入可能アイテムリスト.Count().Is(1);
+            購入可能アイテムリスト.Any(n => n.Name == coke.Name).IsTrue();
+        }
+
+
+
 
     }
 }
