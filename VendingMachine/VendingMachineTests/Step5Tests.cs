@@ -69,5 +69,34 @@ namespace VendingMachineTests
             var 格納アイテムリスト = _アイテムRack.Get格納アイテムリスト();
             格納アイテムリスト.Count(n => n.Name==_coke.Name).Is(4);
         }
+
+
+        [TestMethod]
+        public void _500円投入してコーラを1本購入した場合_お釣り400円とコーラ在庫4本となるか()
+        {
+            _投入口.投入(MoneyKind.Yen500);
+
+            操作パネル.購入(_coke.Name);
+
+            アイテム受取口
+                .Factory()
+                .Getアイテム().Name.Is(_coke.Name);
+
+
+            釣銭口.Factory()
+                .Get釣銭()
+                .Get合計金額().Is(400);
+
+            var 格納アイテムリスト = _アイテムRack.Get格納アイテムリスト();
+            格納アイテムリスト.Count(n => n.Name == _coke.Name).Is(4);
+        }
+
+
+
+
+
+
+
+
     }
 }
