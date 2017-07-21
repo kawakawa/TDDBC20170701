@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using Item.Items;
 
 namespace VendingMachine.部位
@@ -19,10 +20,12 @@ namespace VendingMachine.部位
 
         public static IEnumerable<Item.Item> Get購入可能アイテムリスト()
         {
-            var list=new List<Item.Item>();
-            list.Add(Drink.Factory("コーラ", 100));
-            list.Add(Drink.Factory("水", 100));
-            return list;
+            var 購入可能アイテムリスト = アイテムRack.Factory()
+                                .Get格納アイテムリスト()
+                                .Where(n => Rules.アイテム購入可否判定.Is購入可(n.Name))
+                                .Select(n => n);
+
+            return 購入可能アイテムリスト;
         }
     }
 }
