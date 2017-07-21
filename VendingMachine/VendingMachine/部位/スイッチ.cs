@@ -1,4 +1,7 @@
-﻿namespace VendingMachine.部位
+﻿using System.Collections.Generic;
+using Item.Items;
+
+namespace VendingMachine.部位
 {
     public class スイッチ
     {
@@ -11,6 +14,15 @@
 
             処理.購入.実行(購入希望アイテム名);
 
+        }
+
+
+        public static IEnumerable<Item.Item> Get購入可能アイテムリスト()
+        {
+            var list=new List<Item.Item>();
+            list.Add(Drink.Factory("コーラ", 100));
+            list.Add(Drink.Factory("水", 100));
+            return list;
         }
     }
 }

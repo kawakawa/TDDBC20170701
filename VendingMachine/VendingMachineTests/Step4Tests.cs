@@ -1,5 +1,7 @@
 ﻿using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Money;
+using VendingMachine;
 using VendingMachine.部位;
 
 namespace VendingMachineTests
@@ -9,13 +11,20 @@ namespace VendingMachineTests
     {
 
         private アイテムRack _アイテムRack;
-
+        private 投入金 _投入金;
+        private 投入口 _投入口;
 
         [TestInitialize]
         public void TestInitialize()
         {
             _アイテムRack = アイテムRack.Factory();
             _アイテムRack.格納アイテム初期化();
+
+
+            _投入金 = 投入金.投入金額Factory();
+            _投入金.投入金額歴初期化();
+
+            _投入口 = 投入口.Factory(_投入金);
         }
 
 
@@ -83,6 +92,29 @@ namespace VendingMachineTests
             格納アイテムリスト.First().Price.Is(water.Price);
         }
 
+
+        [TestMethod]
+        public void コーラ_レッドブル_水を格納した状態で100円投下した時購入可能なのはコーラと水だけであるか()
+        {
+
+            var coke = Util.MakeCokeDrink();
+            var redbull = Util.MakeRedBullDrink();
+            var water = Util.MakeWaterDrink();
+
+            _アイテムRack.Setアイテム(coke);
+            _アイテムRack.Setアイテム(redbull);
+            _アイテムRack.Setアイテム(water);
+
+            _投入口.投入(MoneyKind.Yen100);
+
+
+
+            var 購入可能アイテムリスト = スイッチ.Get購入可能アイテムリスト();
+
+            購入可能アイテムリスト.Count().Is(2);
+            購入可能アイテムリスト.Any(n => n.Name == coke.Name).IsTrue();
+            購入可能アイテムリスト.Any(n => n.Name == water.Name).IsTrue();
+        }
 
 
 
