@@ -20,7 +20,7 @@ namespace VendingMachine.処理
                 .Add売上金(購入アイテム.Price);
 
             //投入金額計算
-            投入金.投入金額Factory()
+            投入金.Factory()
                 .購入金額分減算(購入アイテム.Price)
                 .払い戻し();
         }

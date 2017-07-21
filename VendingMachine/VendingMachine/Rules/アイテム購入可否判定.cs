@@ -17,7 +17,7 @@ namespace VendingMachine.Rules
             var 対象アイテム = itemラック.Get格納アイテムリスト()
                                         .First(n=>n.Name== 対象アイテム名);
 
-            var 投入額 = 投入金.投入金額Factory();
+            var 投入額 = 投入金.Factory();
             var 合計投入金額 = 投入額.Get合計金額();
 
             if (対象アイテム.Price <= 合計投入金額)

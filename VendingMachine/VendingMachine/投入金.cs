@@ -21,7 +21,7 @@ namespace VendingMachine
 
 
 
-        public static 投入金 投入金額Factory()
+        public static 投入金 Factory()
         {
             return _投入金 ?? (_投入金 = new 投入金());
         }
