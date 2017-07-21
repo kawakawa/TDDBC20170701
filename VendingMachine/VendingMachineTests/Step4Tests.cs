@@ -1,5 +1,4 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using VendingMachine.部位;
 
@@ -20,28 +19,11 @@ namespace VendingMachineTests
         }
 
 
-        public static Item.Item MakeCokeDrink()
-        {
-            return Item.Items.Drink.Factory("コーラ", 100);
-        }
-
-        public static Item.Item MakeRedBullDrink()
-        {
-            return Item.Items.Drink.Factory("レッドブル", 200);
-        }
-
-        public static Item.Item MakeWaterDrink()
-        {
-            return Item.Items.Drink.Factory("水", 100);
-        }
-
-
-
         [TestMethod]
         public void レッドブル１本を在庫として格納できる()
         {
             //レッドブル
-            var redBull = MakeRedBullDrink();
+            var redBull = Util.MakeRedBullDrink();
 
             //ラックに格納
             _アイテムRack.Setアイテム(redBull);
@@ -58,7 +40,7 @@ namespace VendingMachineTests
         public void 水１本を在庫として格納できる()
         {
             //水
-            var water = MakeWaterDrink();
+            var water = Util.MakeWaterDrink();
 
             //ラックに格納
             _アイテムRack.Setアイテム(water);

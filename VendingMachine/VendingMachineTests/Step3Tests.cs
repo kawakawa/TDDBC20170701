@@ -20,7 +20,7 @@ namespace VendingMachineTests
         [TestInitialize]
         public void TestInitialize()
         {
-            _coke= MakeCokeDrink();
+            _coke= Util.MakeCokeDrink();
 
             _アイテムRack = アイテムRack.Factory();
             _アイテムRack.格納アイテム初期化();
@@ -33,13 +33,7 @@ namespace VendingMachineTests
 
             _投入口= 投入口.Factory(_投入金);
         }
-
         
-        public static Item.Item MakeCokeDrink()
-        {
-            return Item.Items.Drink.Factory("コーラ", 100);
-        }
-
 
 
         [TestMethod]
