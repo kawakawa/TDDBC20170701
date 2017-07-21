@@ -208,6 +208,42 @@ namespace VendingMachineTests
         }
 
 
+        [TestMethod]
+        public void _2000円札でレッドブルを5本を購入した場合_お釣り1000円とレッドブル在庫0本となるか()
+        {
+            _投入口.投入(MoneyKind.Yen1000);
+            _投入口.投入(MoneyKind.Yen1000);
+
+            Enumerable.Range(1, 5).ToList()
+                .ForEach(i =>
+                {
+
+                    操作パネル.購入(_redbull.Name);
+
+                    アイテム受取口
+                        .Factory()
+                        .Getアイテム().Name.Is(_redbull.Name);
+
+                    //お釣りを再度投入
+                    釣銭口.Factory()
+                        .Get釣銭()
+                        .釣銭内容.ToList()
+                        .ForEach(money => _投入口.投入(money));
+                });
+
+
+            操作パネル.払戻し();
+
+            釣銭口.Factory()
+                .Get釣銭()
+                .Get合計金額().Is(1000);
+
+            var 格納アイテムリスト = _アイテムRack.Get格納アイテムリスト();
+            格納アイテムリスト.Count(n => n.Name == _redbull.Name).Is(0);
+
+            _売上金.GetTotal売上金額().Is(1000);
+        }
+
 
 
 
