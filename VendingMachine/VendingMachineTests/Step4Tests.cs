@@ -162,6 +162,24 @@ namespace VendingMachineTests
         }
 
 
+        [TestMethod]
+        public void レッドブルだけを格納した状態で200円投下した時購入可能なのはレッドブルだけであるか()
+        {
+
+            var redbull = Util.MakeRedBullDrink();
+
+            _アイテムRack.Setアイテム(redbull);
+
+            _投入口.投入(MoneyKind.Yen100);
+            _投入口.投入(MoneyKind.Yen100);
+
+            var 購入可能アイテムリスト = 操作パネル.Get購入可能アイテムリスト();
+
+            購入可能アイテムリスト.Count().Is(1);
+            購入可能アイテムリスト.Any(n => n.Name == redbull.Name).IsTrue();
+        }
+
+
 
 
     }
