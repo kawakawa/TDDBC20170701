@@ -35,6 +35,21 @@ namespace VendingMachineTests
         }
 
 
+        [TestMethod]
+        public void レッドブル5本を在庫として格納できる()
+        {
+            //レッドブル
+            var redBull = Util.MakeRedBullDrink();
+
+            //ラックに格納
+            Enumerable.Range(1, 5).ToList()
+                .ForEach(i => _アイテムRack.Setアイテム(redBull));
+
+            var 格納アイテムリスト = _アイテムRack.Get格納アイテムリスト();
+            格納アイテムリスト.Count().Is(5);
+            格納アイテムリスト.First().Name.Is(redBull.Name);
+            格納アイテムリスト.First().Price.Is(redBull.Price);
+        }
 
         [TestMethod]
         public void 水１本を在庫として格納できる()
