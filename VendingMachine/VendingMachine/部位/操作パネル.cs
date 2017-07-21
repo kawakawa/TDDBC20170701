@@ -16,6 +16,10 @@ namespace VendingMachine.部位
 
         }
 
+        public static void 払戻し()
+        {
+            投入金.投入金額Factory().払い戻し();
+        }
 
         public static IEnumerable<Item.Item> Get購入可能アイテムリスト()
         {
@@ -26,5 +30,7 @@ namespace VendingMachine.部位
 
             return 購入可能アイテムリスト;
         }
+
+
     }
 }
