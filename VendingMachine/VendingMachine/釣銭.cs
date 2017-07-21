@@ -10,6 +10,7 @@ namespace VendingMachine
     {
 
         private readonly List<Money.Money> _釣銭金額;
+        public IEnumerable<Money.Money> 釣銭内容 => _釣銭金額;
 
 
         /// <summary>
@@ -23,11 +24,7 @@ namespace VendingMachine
         {
             _釣銭金額 = money.ToList();
         }
-
-        public IEnumerable<Money.Money> Get釣銭内容()
-        {
-            return _釣銭金額;
-        }
+        
 
         public int Get合計金額()
         {

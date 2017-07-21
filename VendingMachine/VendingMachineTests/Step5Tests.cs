@@ -111,7 +111,7 @@ namespace VendingMachineTests
                     //お釣りを再度投入
                     釣銭口.Factory()
                         .Get釣銭()
-                        .Get釣銭内容().ToList()
+                        .釣銭内容.ToList()
                         .ForEach(money => _投入口.投入(money));
                 });
             
