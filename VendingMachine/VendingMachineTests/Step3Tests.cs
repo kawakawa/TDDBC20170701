@@ -28,7 +28,7 @@ namespace VendingMachineTests
             _投入金= 投入金.Factory();
             _投入金.投入金額歴初期化();
 
-            _売上金=売上金.売上金額管理Factory();
+            _売上金=売上金.Factory();
             _売上金.初期化();
 
             _投入口= 投入口.Factory(_投入金);

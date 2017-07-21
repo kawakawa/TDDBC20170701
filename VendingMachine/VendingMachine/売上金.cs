@@ -16,7 +16,7 @@
         }
 
 
-        public static 売上金 売上金額管理Factory()
+        public static 売上金 Factory()
         {
             return _売上金 ?? (_売上金 = new 売上金());
         }
