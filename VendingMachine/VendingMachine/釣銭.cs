@@ -24,6 +24,10 @@ namespace VendingMachine
             _釣銭金額 = money.ToList();
         }
 
+        public IEnumerable<Money.Money> Get釣銭内容()
+        {
+            return _釣銭金額;
+        }
 
         public int Get合計金額()
         {

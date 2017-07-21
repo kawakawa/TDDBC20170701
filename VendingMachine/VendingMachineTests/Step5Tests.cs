@@ -4,6 +4,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Money;
 using VendingMachine;
 using VendingMachine.部位;
+using Money = Money.Money;
 
 namespace VendingMachineTests
 {
@@ -75,7 +76,7 @@ namespace VendingMachineTests
         public void _500円投入してコーラを1本購入した場合_お釣り400円とコーラ在庫4本となるか()
         {
             _投入口.投入(MoneyKind.Yen500);
-
+            
             操作パネル.購入(_coke.Name);
 
             アイテム受取口
@@ -92,7 +93,35 @@ namespace VendingMachineTests
         }
 
 
+        [TestMethod]
+        public void _500円玉でコーラを5本を購入した場合_お釣り0円とコーラ在庫0本となるか()
+        {
+            _投入口.投入(MoneyKind.Yen500);
 
+            Enumerable.Range(1, 5).ToList()
+                .ForEach(i =>
+                {
+
+                    操作パネル.購入(_coke.Name);
+
+                    アイテム受取口
+                        .Factory()
+                        .Getアイテム().Name.Is(_coke.Name);
+
+                    //お釣りを再度投入
+                    釣銭口.Factory()
+                        .Get釣銭()
+                        .Get釣銭内容().ToList()
+                        .ForEach(money => _投入口.投入(money));
+                });
+            
+            釣銭口.Factory()
+                .Get釣銭()
+                .Get合計金額().Is(0);
+
+            var 格納アイテムリスト = _アイテムRack.Get格納アイテムリスト();
+            格納アイテムリスト.Count(n => n.Name == _coke.Name).Is(0);
+        }
 
 
 
