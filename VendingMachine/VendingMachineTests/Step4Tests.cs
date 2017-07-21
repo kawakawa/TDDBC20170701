@@ -163,6 +163,25 @@ namespace VendingMachineTests
 
 
         [TestMethod]
+        public void レッドブル_水だけを格納した状態で100円投下した時購入可能なのは水だけであるか()
+        {
+            
+            var redbull = Util.MakeRedBullDrink();
+            var water = Util.MakeWaterDrink();
+
+            _アイテムRack.Setアイテム(redbull);
+            _アイテムRack.Setアイテム(water);
+
+            _投入口.投入(MoneyKind.Yen100);
+
+            var 購入可能アイテムリスト = 操作パネル.Get購入可能アイテムリスト();
+
+            購入可能アイテムリスト.Count().Is(1);
+            購入可能アイテムリスト.Any(n => n.Name == water.Name).IsTrue();
+        }
+
+
+        [TestMethod]
         public void レッドブルだけを格納した状態で200円投下した時購入可能なのはレッドブルだけであるか()
         {
 
