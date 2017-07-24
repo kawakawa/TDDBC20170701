@@ -52,10 +52,8 @@ namespace VendingMachineTests
 
             Util.受取口からアイテム取出し()
                 .Name.Is(_coke.Name);
-
-
-            釣銭口.Factory()
-                .Get釣銭()
+            
+            Util.釣銭取出し()
                 .Get合計金額().Is(0);
 
             var 格納アイテムリスト = _アイテムRack.Get格納アイテムリスト();
@@ -75,10 +73,8 @@ namespace VendingMachineTests
 
             Util.受取口からアイテム取出し()
                 .Name.Is(_coke.Name);
-
-
-            釣銭口.Factory()
-                .Get釣銭()
+            
+            Util.釣銭取出し()
                 .Get合計金額().Is(400);
 
             var 格納アイテムリスト = _アイテムRack.Get格納アイテムリスト();
@@ -104,14 +100,12 @@ namespace VendingMachineTests
                             .Name.Is(_coke.Name);
 
                     //お釣りを再度投入
-                    釣銭口.Factory()
-                        .Get釣銭()
+                    Util.釣銭取出し()
                         .釣銭内容.ToList()
                         .ForEach(money => _投入口.投入(money));
                 });
-            
-            釣銭口.Factory()
-                .Get釣銭()
+
+            Util.釣銭取出し()
                 .Get合計金額().Is(0);
 
             var 格納アイテムリスト = _アイテムRack.Get格納アイテムリスト();
@@ -137,8 +131,7 @@ namespace VendingMachineTests
                     .Name.Is(_coke.Name);
 
                     //お釣りを再度投入
-                    釣銭口.Factory()
-                        .Get釣銭()
+                    Util.釣銭取出し()
                         .釣銭内容.ToList()
                         .ForEach(money => _投入口.投入(money));
                 });
@@ -146,8 +139,7 @@ namespace VendingMachineTests
 
             操作パネル.払戻し();
 
-            釣銭口.Factory()
-                .Get釣銭()
+            Util.釣銭取出し()
                 .Get合計金額().Is(500);
 
             var 格納アイテムリスト = _アイテムRack.Get格納アイテムリスト();
@@ -171,8 +163,7 @@ namespace VendingMachineTests
                     .Name.Is(_redbull.Name);
 
                     //お釣りを再度投入
-                    釣銭口.Factory()
-                        .Get釣銭()
+                    Util.釣銭取出し()
                         .釣銭内容.ToList()
                         .ForEach(money => _投入口.投入(money));
                 });
@@ -180,8 +171,7 @@ namespace VendingMachineTests
 
             操作パネル.払戻し();
 
-            釣銭口.Factory()
-                .Get釣銭()
+            Util.釣銭取出し()
                 .Get合計金額().Is(0);
 
             var 格納アイテムリスト = _アイテムRack.Get格納アイテムリスト();
@@ -207,8 +197,7 @@ namespace VendingMachineTests
                     .Name.Is(_redbull.Name);
 
                     //お釣りを再度投入
-                    釣銭口.Factory()
-                        .Get釣銭()
+                    Util.釣銭取出し()
                         .釣銭内容.ToList()
                         .ForEach(money => _投入口.投入(money));
                 });
@@ -216,8 +205,7 @@ namespace VendingMachineTests
 
             操作パネル.払戻し();
 
-            釣銭口.Factory()
-                .Get釣銭()
+            Util.釣銭取出し()
                 .Get合計金額().Is(1000);
 
             var 格納アイテムリスト = _アイテムRack.Get格納アイテムリスト();
@@ -239,8 +227,7 @@ namespace VendingMachineTests
                 .Name.Is(_coke.Name);
 
             //お釣りを再度投入
-            釣銭口.Factory()
-                .Get釣銭()
+            Util.釣銭取出し()
                 .釣銭内容.ToList()
                 .ForEach(money => _投入口.投入(money));
 
@@ -250,10 +237,9 @@ namespace VendingMachineTests
 
             Util.受取口からアイテム取出し()
                 .Name.Is(_redbull.Name);
-            
+
             //お釣りを再度投入
-            釣銭口.Factory()
-                .Get釣銭()
+            Util.釣銭取出し()
                 .釣銭内容.ToList()
                 .ForEach(money => _投入口.投入(money));
 
@@ -265,16 +251,14 @@ namespace VendingMachineTests
                 .Name.Is(_water.Name);
 
             //お釣りを再度投入
-            釣銭口.Factory()
-                .Get釣銭()
+            Util.釣銭取出し()
                 .釣銭内容.ToList()
                 .ForEach(money => _投入口.投入(money));
             
             
             操作パネル.払戻し();
 
-            釣銭口.Factory()
-                .Get釣銭()
+            Util.釣銭取出し()
                 .Get合計金額().Is(600);
 
 

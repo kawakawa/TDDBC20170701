@@ -62,6 +62,17 @@ namespace VendingMachineTests
                 .Getアイテム();
         }
 
+        public static 釣銭 釣銭取出し()
+        {
+            return 釣銭口.Factory().Get釣銭();
+        }
+
+        public static 取扱外金 取扱外金取出し()
+        {
+            return 釣銭口.Factory().Get取扱外金();
+        }
+
+
     }
 }
 

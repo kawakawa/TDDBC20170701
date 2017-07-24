@@ -86,9 +86,7 @@ namespace VendingMachineTests
             Util.受取口からアイテム取出し()
                 .Name.Is(_coke.Name);
 
-            //お釣り
-            釣銭口.Factory()
-                .Get釣銭()
+            Util.釣銭取出し()
                 .Get合計金額().Is(0);
         }
 
@@ -141,9 +139,7 @@ namespace VendingMachineTests
             Util.受取口からアイテム取出し()
                 .Name.Is(_coke.Name);
 
-            //お釣り
-            釣銭口.Factory()
-                .Get釣銭()
+            Util.釣銭取出し()
                 .Get合計金額().Is(10);
         }
 
@@ -162,9 +158,7 @@ namespace VendingMachineTests
             Util.受取口からアイテム取出し()
                 .Name.Is(_coke.Name);
 
-            //お釣り
-            釣銭口.Factory()
-                .Get釣銭()
+            Util.釣銭取出し()
                 .Get合計金額().Is(100);
         }
 
@@ -186,9 +180,7 @@ namespace VendingMachineTests
             Util.受取口からアイテム取出し()
                 .Name.Is(_coke.Name);
 
-            //お釣り
-            釣銭口.Factory()
-                .Get釣銭()
+            Util.釣銭取出し()
                 .Get合計金額().Is(80);
         }
 
