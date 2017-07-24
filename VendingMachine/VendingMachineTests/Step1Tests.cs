@@ -17,8 +17,7 @@ namespace VendingMachineTests
         [TestInitialize]
         public void TestIniitialize()
         {
-            _投入金 = 投入金.Factory();
-            _投入金.投入金額歴初期化();
+            _投入金 = Util.投入金準備();
             _投入口 = 投入口.Factory(_投入金);
             _釣銭口 = 釣銭口.Factory();
         }

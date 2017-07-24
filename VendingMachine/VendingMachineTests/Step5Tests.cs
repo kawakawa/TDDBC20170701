@@ -1,10 +1,8 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Money;
 using VendingMachine;
 using VendingMachine.部位;
-using Money = Money.Money;
 
 namespace VendingMachineTests
 {
@@ -17,40 +15,30 @@ namespace VendingMachineTests
 
         private 売上金 _売上金;
 
-        private Item.Item _coke;
-        private Item.Item _redbull;
-        private Item.Item _water;
+        private readonly Item.Item _coke = Util.MakeCokeDrink();
+        private readonly Item.Item _redbull = Util.MakeRedBullDrink();
+        private readonly Item.Item _water = Util.MakeWaterDrink();
 
 
         [TestInitialize]
         public void TestInitialize()
         {
-            _アイテムRack = アイテムRack.Factory();
-            _アイテムRack.格納アイテム初期化();
+            _アイテムRack = Util.アイテムRack準備();
             
-            _投入金 = 投入金.Factory();
-            _投入金.投入金額歴初期化();
+            _投入金 = Util.投入金準備();
+            _売上金 = Util.売上金準備();
 
             _投入口 = 投入口.Factory(_投入金);
 
-            _売上金 = 売上金.Factory();
-            _売上金.初期化();
 
             //Cokeを5本ラック格納
-            _coke = Util.MakeCokeDrink();
-            Enumerable.Range(1, 5).ToList()
-                .ForEach(i => _アイテムRack.Setアイテム(_coke));
+            Util.アイテムRackにセット(_coke,5);
 
             //レッドブルを5本ラック格納
-            _redbull = Util.MakeRedBullDrink();
-            Enumerable.Range(1, 5).ToList()
-                .ForEach(i => _アイテムRack.Setアイテム(_redbull));
+            Util.アイテムRackにセット(_redbull, 5);
 
             //水を5本ラック格納
-            _water = Util.MakeWaterDrink();
-            Enumerable.Range(1, 5).ToList()
-                .ForEach(i => _アイテムRack.Setアイテム(_water));
-            
+            Util.アイテムRackにセット(_water, 5);
         }
 
 

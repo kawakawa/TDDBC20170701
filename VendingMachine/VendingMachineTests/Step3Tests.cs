@@ -15,21 +15,16 @@ namespace VendingMachineTests
         private 投入口 _投入口;
         private 売上金 _売上金;
 
-        private Item.Item _coke;
+        private readonly Item.Item _coke = Util.MakeCokeDrink();
 
         [TestInitialize]
         public void TestInitialize()
         {
-            _coke= Util.MakeCokeDrink();
+            _アイテムRack = Util.アイテムRack準備();
 
-            _アイテムRack = アイテムRack.Factory();
-            _アイテムRack.格納アイテム初期化();
+            _投入金 = Util.投入金準備();
 
-            _投入金= 投入金.Factory();
-            _投入金.投入金額歴初期化();
-
-            _売上金=売上金.Factory();
-            _売上金.初期化();
+            _売上金 = Util.売上金準備();
 
             _投入口= 投入口.Factory(_投入金);
         }
@@ -39,14 +34,10 @@ namespace VendingMachineTests
         [TestMethod]
         public void _100円コーラの在庫がある状態で100円投入して購入可能状態となるか()
         {
+            Util.アイテムRackにセット(_coke,1);
 
-            //ラックにcoke格納
-            _アイテムRack.Setアイテム(_coke);
-
-            //お金投入
             _投入口.投入(MoneyKind.Yen100);
 
-            //購入可否判定
             VendingMachine.Rules.アイテム購入可否判定
                                 .Is購入可(_coke.Name)
                                 .IsTrue();
@@ -57,13 +48,10 @@ namespace VendingMachineTests
         [TestMethod]
         public void _100円コーラの在庫がある状態で10円投入して購入不可状態となるか()
         {
-            //ラックにcoke格納
-            _アイテムRack.Setアイテム(_coke);
+            Util.アイテムRackにセット(_coke,1);
 
-            //お金投入
             _投入口.投入(MoneyKind.Yen10);
 
-            //購入可否判定
             VendingMachine.Rules.アイテム購入可否判定
                 .Is購入可(_coke.Name)
                 .IsFalse();
@@ -87,9 +75,7 @@ namespace VendingMachineTests
         [TestMethod]
         public void _100円コーラの在庫がある状態で100円で購入してコーラと釣銭0円が取得できるか()
         {
-
-            //ラックにcoke格納
-            _アイテムRack.Setアイテム(_coke);
+            Util.アイテムRackにセット(_coke,1);
 
             //お金投入
             _投入口.投入(MoneyKind.Yen100);
@@ -111,9 +97,7 @@ namespace VendingMachineTests
         [TestMethod]
         public void _100円コーラの在庫がある状態で10円で購入してコーラは取得できない()
         {
-
-            //ラックにcoke格納
-            _アイテムRack.Setアイテム(_coke);
+            Util.アイテムRackにセット(_coke,1);
 
             //お金投入
             _投入口.投入(MoneyKind.Yen10);
@@ -151,9 +135,7 @@ namespace VendingMachineTests
         [TestMethod]
         public void _100円コーラの在庫がある状態で110円で購入してコーラと釣銭10円が取得できるか()
         {
-
-            //ラックにcoke格納
-            _アイテムRack.Setアイテム(_coke);
+            Util.アイテムRackにセット(_coke,1);
 
             //お金投入
             _投入口.投入(MoneyKind.Yen100);
@@ -176,9 +158,7 @@ namespace VendingMachineTests
         [TestMethod]
         public void _100円コーラの在庫がある状態で200円で購入してコーラと釣銭100円が取得できるか()
         {
-
-            //ラックにcoke格納
-            _アイテムRack.Setアイテム(_coke);
+            Util.アイテムRackにセット(_coke, 1);
 
             //お金投入
             _投入口.投入(MoneyKind.Yen100);
@@ -201,9 +181,7 @@ namespace VendingMachineTests
         [TestMethod]
         public void _100円コーラの在庫がある状態で180円で購入してコーラと釣銭80円が取得できるか()
         {
-
-            //ラックにcoke格納
-            _アイテムRack.Setアイテム(_coke);
+            Util.アイテムRackにセット(_coke, 1);
 
             //お金投入
             _投入口.投入(MoneyKind.Yen100);
@@ -231,8 +209,7 @@ namespace VendingMachineTests
         [TestMethod]
         public void _100円コーラの在庫がある状態で1本購入して売上金額が100円となるか()
         {
-            //ラックにcoke格納
-            _アイテムRack.Setアイテム(_coke);
+            Util.アイテムRackにセット(_coke,1);
             
             //購入
             _投入口.投入(MoneyKind.Yen100);
@@ -247,10 +224,7 @@ namespace VendingMachineTests
         [TestMethod]
         public void _100円コーラの在庫がある状態で2本購入して売上金額が200円となるか()
         {
-
-            //ラックにcoke格納
-            _アイテムRack.Setアイテム(_coke);
-            _アイテムRack.Setアイテム(_coke);
+            Util.アイテムRackにセット(_coke,2);
 
             //購入１
             _投入口.投入(MoneyKind.Yen100);
@@ -269,8 +243,7 @@ namespace VendingMachineTests
         public void _100円コーラの在庫が1本の状態で1本購入すると在庫が0本になるか()
         {
 
-            //ラックにcoke格納
-            _アイテムRack.Setアイテム(_coke);
+            Util.アイテムRackにセット(_coke, 1);
 
             //購入１
             _投入口.投入(MoneyKind.Yen100);
@@ -286,9 +259,7 @@ namespace VendingMachineTests
         public void _100円コーラの在庫が2本の状態で1本購入すると在庫が1本になるか()
         {
 
-            //ラックにcoke格納
-            _アイテムRack.Setアイテム(_coke);
-            _アイテムRack.Setアイテム(_coke);
+            Util.アイテムRackにセット(_coke, 2);
 
             //購入１
             _投入口.投入(MoneyKind.Yen100);
