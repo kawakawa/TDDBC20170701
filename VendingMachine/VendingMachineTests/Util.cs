@@ -55,6 +55,13 @@ namespace VendingMachineTests
                 .ForEach(i => アイテムRack.Setアイテム(アイテム));
         }
 
+        public static Item.Item 受取口からアイテム取出し()
+        {
+            return アイテム受取口
+                .Factory()
+                .Getアイテム();
+        }
+
     }
 }
 

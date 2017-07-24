@@ -83,10 +83,8 @@ namespace VendingMachineTests
             //購入
             操作パネル.購入(_coke.Name);
 
-            //アイテム受取
-            アイテム受取口
-                .Factory()
-                .Getアイテム().Name.Is(_coke.Name);
+            Util.受取口からアイテム取出し()
+                .Name.Is(_coke.Name);
 
             //お釣り
             釣銭口.Factory()
@@ -106,9 +104,7 @@ namespace VendingMachineTests
             操作パネル.購入(_coke.Name);
 
             //アイテム受取
-            アイテム受取口
-                .Factory()
-                .Getアイテム()
+            Util.受取口からアイテム取出し()
                 .IsNull();
 
         }
@@ -125,10 +121,8 @@ namespace VendingMachineTests
             //購入
             操作パネル.購入(_coke.Name);
 
-            //アイテム受取
-            アイテム受取口
-                .Factory()
-                .Getアイテム().IsNull();
+            Util.受取口からアイテム取出し()
+                .IsNull();
 
         }
 
@@ -144,10 +138,8 @@ namespace VendingMachineTests
             //購入
             操作パネル.購入(_coke.Name);
 
-            //アイテム受取
-            アイテム受取口
-                .Factory()
-                .Getアイテム().Name.Is(_coke.Name);
+            Util.受取口からアイテム取出し()
+                .Name.Is(_coke.Name);
 
             //お釣り
             釣銭口.Factory()
@@ -167,10 +159,8 @@ namespace VendingMachineTests
             //購入
             操作パネル.購入(_coke.Name);
 
-            //アイテム受取
-            アイテム受取口
-                .Factory()
-                .Getアイテム().Name.Is(_coke.Name);
+            Util.受取口からアイテム取出し()
+                .Name.Is(_coke.Name);
 
             //お釣り
             釣銭口.Factory()
@@ -193,10 +183,8 @@ namespace VendingMachineTests
             //購入
             操作パネル.購入(_coke.Name);
 
-            //アイテム受取
-            アイテム受取口
-                .Factory()
-                .Getアイテム().Name.Is(_coke.Name);
+            Util.受取口からアイテム取出し()
+                .Name.Is(_coke.Name);
 
             //お釣り
             釣銭口.Factory()
