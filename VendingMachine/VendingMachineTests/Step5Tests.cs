@@ -244,7 +244,69 @@ namespace VendingMachineTests
             _売上金.GetTotal売上金額().Is(1000);
         }
 
+        [TestMethod]
+        public void _1000円札でコーラ_レッドブル_水を1本ずつを購入した場合_お釣り600円と在庫がそれぞれ4本となるか()
+        {
+            _投入口.投入(MoneyKind.Yen1000);
 
+
+            //コーラ購入
+            操作パネル.購入(_coke.Name);
+
+            アイテム受取口
+                .Factory()
+                .Getアイテム().Name.Is(_coke.Name);
+
+            //お釣りを再度投入
+            釣銭口.Factory()
+                .Get釣銭()
+                .釣銭内容.ToList()
+                .ForEach(money => _投入口.投入(money));
+
+
+            //レッドブル購入
+            操作パネル.購入(_redbull.Name);
+
+            アイテム受取口
+                .Factory()
+                .Getアイテム().Name.Is(_redbull.Name);
+
+            //お釣りを再度投入
+            釣銭口.Factory()
+                .Get釣銭()
+                .釣銭内容.ToList()
+                .ForEach(money => _投入口.投入(money));
+
+
+            //水購入
+            操作パネル.購入(_water.Name);
+
+            アイテム受取口
+                .Factory()
+                .Getアイテム().Name.Is(_water.Name);
+
+            //お釣りを再度投入
+            釣銭口.Factory()
+                .Get釣銭()
+                .釣銭内容.ToList()
+                .ForEach(money => _投入口.投入(money));
+            
+            
+            操作パネル.払戻し();
+
+            釣銭口.Factory()
+                .Get釣銭()
+                .Get合計金額().Is(600);
+
+
+            var 格納アイテムリスト = _アイテムRack.Get格納アイテムリスト();
+
+            格納アイテムリスト.Count(n => n.Name == _coke.Name).Is(4);
+            格納アイテムリスト.Count(n => n.Name == _redbull.Name).Is(4);
+            格納アイテムリスト.Count(n => n.Name == _water.Name).Is(4);
+
+            _売上金.GetTotal売上金額().Is(400);
+        }
 
 
     }
