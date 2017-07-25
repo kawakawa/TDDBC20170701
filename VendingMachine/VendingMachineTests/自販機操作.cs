@@ -10,6 +10,7 @@ namespace VendingMachineTests
     {
 
         private readonly アイテムRack _アイテムRack;
+        private readonly 投入金 _投入金;
         private readonly 投入口 _投入口;
         private readonly 売上金 _売上金;
 
@@ -19,10 +20,10 @@ namespace VendingMachineTests
         {
             _アイテムRack = Util.アイテムRack準備();
 
-            var 投入金 = Util.投入金準備();
+            _投入金 = Util.投入金準備();
             _売上金 = Util.売上金準備();
 
-            _投入口 = 投入口.Factory(投入金);
+            _投入口 = 投入口.Factory(_投入金);
         }
 
 
@@ -35,6 +36,12 @@ namespace VendingMachineTests
         public 自販機操作 お金投入(Money.Money 金額)
         {
             _投入口.投入(金額);
+            return this;
+        }
+
+        public 自販機操作 投入金(Action<投入金> action)
+        {
+            action(_投入金);
             return this;
         }
 
