@@ -274,6 +274,8 @@ namespace VendingMachineTests
         {
             _自販機操作
                 .お金投入(金額: MoneyKind.Yen1000)
+                
+                .説明コメント("//-----コーラの購入-----//")
                 .購入(_coke.Name)
                 .取出し口から購入アイテム取出し
                 (
@@ -293,6 +295,7 @@ namespace VendingMachineTests
                     }
                 )
 
+                .説明コメント("//-----レッドブルの購入-----//")
                 .購入(_redbull.Name)
                 .取出し口から購入アイテム取出し
                 (
@@ -312,7 +315,7 @@ namespace VendingMachineTests
                     }
                 )
 
-
+                .説明コメント("//-----水の購入-----//")
                 .購入(_water.Name)
                 .取出し口から購入アイテム取出し
                 (
@@ -322,6 +325,8 @@ namespace VendingMachineTests
                         取り出したアイテム.Name.Is(_water.Name);
                     }
                 )
+
+                
                 .釣銭取出し
                 (
                     取り出した釣銭 =>
@@ -329,9 +334,6 @@ namespace VendingMachineTests
                         取り出した釣銭.Get合計金額().Is(600);
                     }
                 )
-
-                
-               
                 .格納アイテムリスト取得
                 (
                     アイテムリスト =>

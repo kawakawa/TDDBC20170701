@@ -99,5 +99,10 @@ namespace VendingMachineTests
             return this;
         }
 
+
+        public 自販機操作 説明コメント(string コメント)
+        {
+            return this;
+        }
     }
 }
