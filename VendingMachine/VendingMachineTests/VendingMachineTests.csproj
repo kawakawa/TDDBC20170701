@@ -58,6 +58,7 @@
     <Compile Include="Step4Tests.cs" />
     <Compile Include="Step5Tests.cs" />
     <Compile Include="Util.cs" />
+    <Compile Include="自販機操作.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
