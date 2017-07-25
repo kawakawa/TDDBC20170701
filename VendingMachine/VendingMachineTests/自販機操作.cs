@@ -91,6 +91,13 @@ namespace VendingMachineTests
             return this;
         }
 
+        public 自販機操作 取扱外金取出し(Action<取扱外金> action)
+        {
+            var 取り出した取扱外金 = Util.取扱外金取出し();
+            action(取り出した取扱外金);
+            return this;
+        }
+
 
         public 自販機操作 格納アイテムリスト取得(Action<IEnumerable<Item.Item>> action)
         {
