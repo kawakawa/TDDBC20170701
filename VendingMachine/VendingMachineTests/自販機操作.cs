@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using VendingMachine;
 using VendingMachine.部位;
 
@@ -12,7 +10,6 @@ namespace VendingMachineTests
     {
 
         private readonly アイテムRack _アイテムRack;
-        private readonly 投入金 _投入金;
         private readonly 投入口 _投入口;
         private readonly 売上金 _売上金;
 
@@ -22,10 +19,10 @@ namespace VendingMachineTests
         {
             _アイテムRack = Util.アイテムRack準備();
 
-            _投入金 = Util.投入金準備();
+            var 投入金 = Util.投入金準備();
             _売上金 = Util.売上金準備();
 
-            _投入口 = 投入口.Factory(_投入金);
+            _投入口 = 投入口.Factory(投入金);
         }
 
 
