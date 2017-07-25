@@ -8,38 +8,48 @@ namespace VendingMachineTests
     public class Step2Tests
     {
 
-        private アイテムRack _アイテムRack;
+        private 自販機操作 _自販機操作;
 
         private readonly Item.Item _coke = Util.MakeCokeDrink();
 
         [TestInitialize]
         public void TestInitialize()
         {
-            _アイテムRack = Util.アイテムRack準備();
+            _自販機操作=new 自販機操作();
         }
         
 
         [TestMethod]
         public void コーラを1本在庫として格納できる()
         {
-            Util.アイテムRackにセット(_coke,1);
-
-            var 格納アイテムリスト = _アイテムRack.Get格納アイテムリスト();
-            格納アイテムリスト.Count().Is(1);
-            格納アイテムリスト.First().Name.Is(_coke.Name);
-            格納アイテムリスト.First().Price.Is(_coke.Price);
-            
+            _自販機操作
+                .アイテムをラックに格納(対象アイテム: _coke, 個数: 1)
+                .格納アイテムリスト取得
+                (
+                    アイテムリスト =>
+                    {
+                        アイテムリスト.Count().Is(1);
+                        アイテムリスト.First().Name.Is(_coke.Name);
+                    }
+                )
+                ;
         }
 
         [TestMethod]
         public void コーラを5本在庫として格納できる()
         {
-            Util.アイテムRackにセット(_coke,5);
+            _自販機操作
+                .アイテムをラックに格納(対象アイテム: _coke, 個数: 5)
+                .格納アイテムリスト取得
+                (
+                    アイテムリスト =>
+                    {
+                        アイテムリスト.Count().Is(5);
+                        アイテムリスト.All(n=>n.Name==_coke.Name).IsTrue();
+                    }
+                )
+                ;
 
-            var 格納アイテムリスト = _アイテムRack.Get格納アイテムリスト();
-            格納アイテムリスト.Count().Is(5);
-            格納アイテムリスト.All(n => n.Name == _coke.Name).IsTrue();
-            格納アイテムリスト.All(n => n.Price == _coke.Price).IsTrue();
 
         }
     }
