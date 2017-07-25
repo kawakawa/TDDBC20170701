@@ -40,7 +40,15 @@ namespace VendingMachineTests
             _投入口.投入(金額);
             return this;
         }
-        
+
+        public 自販機操作 購入可能アイテムリスト(Action<IEnumerable<Item.Item>> action)
+        {
+            var 購入可能アイテムリスト = 操作パネル.Get購入可能アイテムリスト();
+            action(購入可能アイテムリスト);
+            return this;
+        }
+
+
         public 自販機操作 購入(string アイテム名)
         {
             操作パネル.購入(アイテム名);
